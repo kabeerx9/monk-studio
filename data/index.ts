@@ -199,14 +199,17 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/link.svg",
+    link: "https://www.linkedin.com/company/media-monks-studio/"
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/fb.svg",
+    link: "https://www.facebook.com/share/187m937mxf/?mibextid=wwXIfr"
   },
   {
     id: 3,
-    img: "/link.svg",
-  },
+    img: "/twit.svg",
+    link: "https://x.com/_mediamonks"
+  }
 ];
