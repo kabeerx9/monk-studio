@@ -42,7 +42,7 @@ const ContactForm = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-[#C1C2D3] text-lg">Let's discuss your next project</p>
+          <p className="text-[#C1C2D3] text-lg">Let&apos;s discuss your next project</p>
         </motion.div>
 
         <motion.form

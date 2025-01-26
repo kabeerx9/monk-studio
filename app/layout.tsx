@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -7,6 +9,7 @@ import { ThemeProvider } from "./provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mediamonk.studio'),
   title: "Media Monk Studio | Digital Innovation & Web Development",
   description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
   icons: {
@@ -21,12 +24,17 @@ export const metadata: Metadata = {
     title: "Media Monk Studio | Digital Innovation & Web Development",
     description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
     images: ["/logo.png"],
+    url: 'https://mediamonk.studio',
+    siteName: 'Media Monk Studio',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: "summary_large_image",
     title: "Media Monk Studio | Digital Innovation & Web Development",
     description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
     images: ["/logo.png"],
+    creator: "@mediamonk",
   },
 };
 
