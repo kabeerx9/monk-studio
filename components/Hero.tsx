@@ -57,7 +57,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Media Monk studio - Your Partner in Digital Excellence
+            Media Monk Studio - Your Partner in Digital Excellence
           </p>
 
           <a href="#about">

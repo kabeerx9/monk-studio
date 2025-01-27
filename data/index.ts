@@ -73,7 +73,7 @@ export const projects = [
     id: 1,
     title: "Akima Films",
     des: "A sleek and professional website for a film production company, showcasing their portfolio with elegant animations and responsive design. Built with classic web technologies for optimal performance.",
-    img: "/p1.svg",
+    img: "/images/akima.png",
     iconLists: ["/html.svg", "/css.svg", "/js.svg"],
     link: "https://akimafilms.com/",
   },
@@ -81,23 +81,23 @@ export const projects = [
     id: 2,
     title: "Book Asia DMC",
     des: "A comprehensive travel booking platform for Asia destinations, featuring dynamic content management and responsive design built with Next.js and Tailwind CSS.",
-    img: "/p3.svg",
+    img: "/images/Bookasia.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://bookasiadmc.com/",
   },
   {
     id: 3,
-    title: "Xpress Sells",
-    des: "Modern e-commerce platform built with Next.js and Tailwind CSS, offering a seamless shopping experience with fast page loads and intuitive navigation.",
-    img: "/p2.svg",
+    title: "Xpressells",
+    des: "Modern e-commerce landing page built with Wordpress & Elementor. Require minimum maintenance, focused on driving sales.",
+    img: "/images/Xpressells.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://xpressells.com/",
   },
   {
     id: 4,
-    title: "Savoria Bistro",
+    title: "Resort Webpage",
     des: "An elegant restaurant website featuring an immersive dining experience, online reservations, and a dynamic menu showcase using Next.js and Tailwind CSS.",
-    img: "/p4.svg",
+    img: "/images/Resort.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://travel-mockup.vercel.app/",
   },
@@ -105,7 +105,7 @@ export const projects = [
     id: 5,
     title: "Real Estate Platform",
     des: "A sophisticated real estate platform with property listings, search functionality, and modern UI components built using Next.js and Tailwind CSS.",
-    img: "/p4.svg",
+    img: "/images/Real-estate.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://media-monks-real-state.vercel.app/",
   }
@@ -113,25 +113,23 @@ export const projects = [
 
 export const testimonials = [
   {
-    quote: "Media Monk studio transformed our online presence with their innovative approach and attention to detail. Their team's expertise in creating engaging user experiences has significantly improved our customer engagement.",
-    name: "Sarah Chen",
-    title: "CEO, TechVision Inc",
+    quote: "I thought it was impossible to make a website as beautiful as our product, but your team proved me wrong.",
+    name: "Anita Chetri",
+    title: "COO of Xpressells",
+    img : '/testimonials/anita.jpeg'
   },
   {
-    quote: "Working with Media Monk studio was a game-changer for our business. Their understanding of modern web technologies and commitment to excellence delivered results beyond our expectations.",
-    name: "David Martinez",
-    title: "Marketing Director, GlobalTech Solutions",
+    quote: "I've never met a web developer who truly cares about their clients' success like you did.",
+    name: "Divyanshu Sah",
+    title: "Book Asia DMC",
+    img :  null
   },
   {
-    quote: "The team at Media Monk studio brought our vision to life with their creative solutions and technical expertise. Their responsive communication and agile development approach made the entire process smooth.",
-    name: "Emily Thompson",
-    title: "Product Manager, InnovateCorp",
+    quote: "Love the enthusiasm, professionalism of you guys. I loved how you took care of the smallest things.",
+    name: "Mradul",
+    title: "Founder - Akima Films",
+    img : '/testimonials/mradul.jpeg'
   },
-  {
-    quote: "From concept to execution, Media Monk studio demonstrated exceptional professionalism and technical prowess. They didn't just build a website; they created a powerful digital asset that drives our business growth.",
-    name: "Michael Roberts",
-    title: "Founder, Digital Innovations Ltd",
-  }
 ];
 
 export const companies = [
@@ -165,12 +163,6 @@ export const companies = [
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
   },
-  {
-    id: 6,
-    name: "HubSpot",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
-  }
 ];
 
 export const workExperience = [
