@@ -105,7 +105,7 @@ const RecentWork = () => {
           Recent Work
         </h2>
         <p className="text-gray-400 text-base">
-          We don't just build MVPs. We engineer digital products that dominate their markets.
+          We don&apos;t just build MVPs. We engineer digital products that dominate their markets.
         </p>
       </motion.div>
 
@@ -228,7 +228,7 @@ const RecentWork = () => {
                 <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4">
                   <RotateCcw className="w-8 h-8 text-blue-500" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">You've seen them all!</h3>
+                <h3 className="text-xl font-bold text-white mb-2">You&apos;ve seen them all!</h3>
                 <p className="text-gray-400 text-sm mb-6 text-center px-6">Tap below to reset the stack and view the projects again.</p>
                 <button 
                   onClick={() => setStackIndex(0)}

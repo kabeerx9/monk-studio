@@ -35,10 +35,10 @@ export default function ContactPage() {
               Strategy Call
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-              Let's build something <span className="text-[#0B57D0]">legendary.</span>
+              Let&apos;s build something <span className="text-[#0B57D0]">legendary.</span>
             </h1>
             <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-md leading-relaxed">
-              We don't just take orders; we partner with ambitious founders to build products that dominate. Tell us about your vision.
+              We don&apos;t just take orders; we partner with ambitious founders to build products that dominate. Tell us about your vision.
             </p>
 
             <div className="space-y-8">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg mb-1">No Commitments</h3>
-                  <p className="text-gray-500">The 30-minute strategy call is completely free. We'll map out your architecture whether you hire us or not.</p>
+                  <p className="text-gray-500">The 30-minute strategy call is completely free. We&apos;ll map out your architecture whether you hire us or not.</p>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                   </div>
                   <h3 className="text-3xl font-bold text-white mb-4">Request Received!</h3>
-                  <p className="text-gray-400 text-lg max-w-sm">We're reviewing your project details. Look out for an email from our lead engineer shortly.</p>
+                  <p className="text-gray-400 text-lg max-w-sm">We&apos;re reviewing your project details. Look out for an email from our lead engineer shortly.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">

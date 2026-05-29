@@ -63,7 +63,7 @@ const WhyMvpsFail = () => {
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">Endless Timelines</h3>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            What should be a 30-day build stretches into months of scope creep and 'research'. You lose the first-mover advantage.
+            What should be a 30-day build stretches into months of scope creep and &apos;research&apos;. You lose the first-mover advantage.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ const WhyMvpsFail = () => {
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">Budget Hemorrhage</h3>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            "Unforeseen complexities" double your initial quote. You're held hostage halfway through development and drain your marketing budget.
+            &ldquo;Unforeseen complexities&rdquo; double your initial quote. You&apos;re held hostage halfway through development and drain your marketing budget.
           </p>
         </motion.div>
 

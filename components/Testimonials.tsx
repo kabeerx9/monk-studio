@@ -18,7 +18,7 @@ const Testimonials = () => {
           Client Success Stories
         </h2>
         <p className="text-gray-500 text-lg">
-          Don't just take our word for it. Hear from founders and leaders who have launched with us.
+          Don&apos;t just take our word for it. Hear from founders and leaders who have launched with us.
         </p>
       </motion.div>
 
@@ -35,7 +35,7 @@ const Testimonials = () => {
             <Quote className="w-10 h-10 text-blue-100 mb-6 group-hover:text-blue-200 transition-colors" />
             
             <p className="text-gray-700 text-lg leading-relaxed flex-1 italic mb-8">
-              "{testimonial.quote}"
+              &ldquo;{testimonial.quote}&rdquo;
             </p>
             
             <div className="flex items-center gap-4 mt-auto">

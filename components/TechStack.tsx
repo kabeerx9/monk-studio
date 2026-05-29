@@ -49,7 +49,7 @@ const TechStack = () => {
           Powered by Enterprise Tech
         </h2>
         <p className="text-lg text-gray-500">
-          We build scalable, robust systems using battle-tested technologies that power the world's leading tech companies.
+          We build scalable, robust systems using battle-tested technologies that power the world&apos;s leading tech companies.
         </p>
       </motion.div>
 
