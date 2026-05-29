@@ -71,43 +71,148 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Akima Films",
-    des: "A sleek and professional website for a film production company, showcasing their portfolio with elegant animations and responsive design. Built with classic web technologies for optimal performance.",
-    img: "/images/akima.png",
-    iconLists: ["/html.svg", "/css.svg", "/js.svg"],
-    link: "https://akimafilms.com/",
+    title: "Plateio",
+    des: "Carpet Review SaaS - ReviewQR.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fplateio.in?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://plateio.in",
+    type: "web"
   },
   {
     id: 2,
-    title: "Book Asia DMC",
-    des: "A comprehensive travel booking platform for Asia destinations, featuring dynamic content management and responsive design built with Next.js and Tailwind CSS.",
-    img: "/images/Bookasia.png",
+    title: "Carpet Company",
+    des: "A modern carpet company platform.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsuraj-xi.vercel.app%2F?w=800",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://bookasiadmc.com/",
+    link: "https://suraj-xi.vercel.app/",
+    type: "web"
   },
   {
     id: 3,
-    title: "Xpressells",
-    des: "Modern e-commerce landing page built with Wordpress & Elementor. Require minimum maintenance, focused on driving sales.",
-    img: "/images/Xpressells.png",
+    title: "ReviewQR",
+    des: "A platform for managing and generating Review QRs.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Freview-qr-kappa.vercel.app%2F?w=800",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://xpressells.com/",
+    link: "https://review-qr-kappa.vercel.app/",
+    type: "web"
   },
   {
     id: 4,
-    title: "Resort Webpage",
-    des: "An elegant restaurant website featuring an immersive dining experience, online reservations, and a dynamic menu showcase using Next.js and Tailwind CSS.",
-    img: "/images/Resort.png",
+    title: "Sumukha Sports Arena",
+    des: "Turf booking website with scheduling.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsumukha-hji7.vercel.app%2F?w=800",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://travel-mockup.vercel.app/",
+    link: "https://sumukha-hji7.vercel.app/",
+    type: "web"
   },
   {
     id: 5,
+    title: "Voice AI SaaS",
+    des: "Landing page for a Voice AI SaaS product.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsolution-smoky.vercel.app%2F?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://solution-smoky.vercel.app/",
+    type: "web"
+  },
+  {
+    id: 6,
+    title: "SaaS Landing Page",
+    des: "A modern SaaS landing page template.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmanthan-indol.vercel.app%2F?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://manthan-indol.vercel.app/",
+    type: "web"
+  },
+  {
+    id: 7,
+    title: "Akima Films",
+    des: "Video editor site and portfolio.",
+    img: "https://s.wordpress.com/mshots/v1/http%3A%2F%2Fakimafilms.com?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "http://akimafilms.com",
+    type: "web"
+  },
+  {
+    id: 8,
+    title: "Goreeva",
+    des: "ERP Software client for schools.",
+    img: "https://s.wordpress.com/mshots/v1/http%3A%2F%2Fgoreeva.com?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "http://goreeva.com",
+    type: "web"
+  },
+  {
+    id: 9,
+    title: "Travel Mockup",
+    des: "Interactive travel website mockup.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftravel-mockup.vercel.app%2F?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://travel-mockup.vercel.app/",
+    type: "web"
+  },
+  {
+    id: 10,
     title: "Real Estate Platform",
-    des: "A sophisticated real estate platform with property listings, search functionality, and modern UI components built using Next.js and Tailwind CSS.",
-    img: "/images/Real-estate.png",
+    des: "Modern real estate platform.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmedia-monks-real-state.vercel.app%2F?w=800",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://media-monks-real-state.vercel.app/",
+    type: "web"
+  },
+  {
+    id: 11,
+    title: "Construction SaaS",
+    des: "SaaS landing page for construction management.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fconstruction-tau-hazel.vercel.app%2F?w=800",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://construction-tau-hazel.vercel.app/",
+    type: "web"
+  },
+  // Mobile Apps
+  {
+    id: 12,
+    title: "Goreeva Discussion",
+    des: "Mobile discussion platform for Goreeva ERP.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.goreeva.discussion?w=800",
+    iconLists: ["/re.svg"], 
+    link: "https://play.google.com/store/apps/details?id=com.goreeva.discussion",
+    type: "mobile"
+  },
+  {
+    id: 13,
+    title: "Goreeva Native",
+    des: "Native ERP application for schools.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.goreeva_native?w=800",
+    iconLists: ["/re.svg"],
+    link: "https://play.google.com/store/apps/details?id=com.goreeva_native",
+    type: "mobile"
+  },
+  {
+    id: 14,
+    title: "Goreeva (iOS)",
+    des: "iOS application for Goreeva ERP ecosystem.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fin%2Fapp%2Fgoreeva%2Fid6468810844?w=800",
+    iconLists: ["/re.svg"],
+    link: "https://apps.apple.com/in/app/goreeva/id6468810844",
+    type: "mobile"
+  },
+  {
+    id: 15,
+    title: "Goreeva Teacher",
+    des: "Dedicated app for teachers on Goreeva.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fin%2Fapp%2Fgoreeva-teacher%2Fid6477329536?w=800",
+    iconLists: ["/re.svg"],
+    link: "https://apps.apple.com/in/app/goreeva-teacher/id6477329536",
+    type: "mobile"
+  },
+  {
+    id: 16,
+    title: "Discussion by Goreeva",
+    des: "Discussion forum app for the Goreeva suite.",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fdiscussion-by-goreeva%2Fid6740763704?w=800",
+    iconLists: ["/re.svg"],
+    link: "https://apps.apple.com/us/app/discussion-by-goreeva/id6740763704",
+    type: "mobile"
   }
 ];
 

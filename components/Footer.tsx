@@ -1,53 +1,62 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
+import React from "react";
 import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div>
+    <footer className="w-full border-t border-gray-100 bg-white pt-20 pb-10 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <div className="flex flex-col md:flex-row justify-between w-full mb-16 gap-10">
+          
+          <div className="flex flex-col max-w-sm">
+            <h3 className="text-2xl font-black tracking-tighter text-gray-900 mb-4">
+              MONK<span className="text-[#0B57D0]">STUDIO</span>
+            </h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Premium software development agency specializing in rapidly building, launching, and scaling high-performance MVPs and enterprise solutions.
+            </p>
+            <div className="flex items-center gap-4">
+              {socialMedia.map((social) => (
+                <Link 
+                  href={social.link} 
+                  key={social.id} 
+                  target="_blank"
+                  className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200 hover:border-[#0B57D0] hover:bg-blue-50 hover:shadow-md transition-all group"
+                >
+                  <img src={social.img} alt="social icon" className="w-5 h-5 opacity-80 brightness-0 group-hover:opacity-100 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take your <span className="text-purple">digital</span> presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:contact@jsmastery.pro">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2025 Media Monk Studio
-        </p>
+          <div className="flex gap-16 md:gap-24 flex-wrap">
+            <div className="flex flex-col gap-4">
+              <h4 className="font-bold text-gray-900 mb-2">Company</h4>
+              <Link href="/about" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">About Us</Link>
+              <Link href="/4#portfolio" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Work</Link>
+              <Link href="/4#testimonials" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Testimonials</Link>
+              <Link href="/4/process" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Process</Link>
+              <Link href="/4/contact" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Contact</Link>
+            </div>
+            
+            <div className="flex flex-col gap-4">
+              <h4 className="font-bold text-gray-900 mb-2">Services</h4>
+              <span className="text-sm text-gray-500">Web Development</span>
+              <span className="text-sm text-gray-500">Mobile Apps</span>
+              <span className="text-sm text-gray-500">UI/UX Design</span>
+              <span className="text-sm text-gray-500">MVP Strategy</span>
+            </div>
+          </div>
 
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <a
-              key={info.id}
-              href={info.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 hover:border-white/20 transition-colors"
-            >
-              <img src={info.img} alt="social media icon" width={20} height={20} />
-            </a>
-          ))}
+        </div>
+
+        <div className="w-full border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+          <p>© {new Date().getFullYear()} Monk Studio. All rights reserved.</p>
+          <div className="flex items-center gap-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="hover:text-gray-900 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-gray-900 transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
