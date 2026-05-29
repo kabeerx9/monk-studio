@@ -16,7 +16,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 max-w-4xl leading-[1.1]"
       >
-        Ship Your MVP in 30 Days <br className="hidden md:block" /> Not 6 Months
+        Ship Your MVP Faster <br className="hidden md:block" /> Not in 6 Months
       </motion.h1>
       
       <motion.p 

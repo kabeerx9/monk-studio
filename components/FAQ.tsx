@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "How do you deliver an MVP in just 30 days?",
+    question: "How do you deliver an MVP so fast?",
     answer: "We leverage a battle-tested foundational architecture, pre-built enterprise-grade modules, and AI-accelerated workflows. Instead of reinventing the wheel (like auth, payments, or basic CRUD), we focus purely on your unique business logic."
   },
   {

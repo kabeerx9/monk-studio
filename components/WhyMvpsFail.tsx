@@ -42,12 +42,12 @@ const WhyMvpsFail = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="bg-[#0A0A0A] rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-800 shadow-xl overflow-hidden group"
+          className="bg-white rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-200 shadow-lg overflow-hidden group"
         >
-          <div className="h-40 md:h-48 w-full bg-[#111] rounded-xl mb-8 flex flex-col items-center justify-center relative border border-gray-800/60 overflow-hidden">
+          <div className="h-40 md:h-48 w-full bg-gray-50 rounded-xl mb-8 flex flex-col items-center justify-center relative border border-gray-200 overflow-hidden">
             {/* Custom Micro-graphic: Infinite Loading / Timeline */}
             <div className="w-full px-8 relative">
-              <div className="h-1 w-full bg-gray-800 rounded-full overflow-hidden relative">
+              <div className="h-1 w-full bg-gray-200 rounded-full overflow-hidden relative">
                 <motion.div 
                   animate={{ x: ["-100%", "200%"] }}
                   transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
@@ -59,11 +59,11 @@ const WhyMvpsFail = () => {
                 <span className="text-red-500 text-xs font-bold animate-pulse">Month 6...</span>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">Endless Timelines</h3>
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            What should be a 30-day build stretches into months of scope creep and &apos;research&apos;. You lose the first-mover advantage.
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 tracking-tight">Endless Timelines</h3>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            What should be a fast build stretches into months of scope creep and &apos;research&apos;. You lose the first-mover advantage.
           </p>
         </motion.div>
 
@@ -73,9 +73,9 @@ const WhyMvpsFail = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="bg-[#0A0A0A] rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-800 shadow-xl overflow-hidden group"
+          className="bg-white rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-200 shadow-lg overflow-hidden group"
         >
-          <div className="h-40 md:h-48 w-full bg-[#111] rounded-xl mb-8 flex items-end justify-center pb-8 relative border border-gray-800/60 overflow-hidden">
+          <div className="h-40 md:h-48 w-full bg-gray-50 rounded-xl mb-8 flex items-end justify-center pb-8 relative border border-gray-200 overflow-hidden">
              {/* Custom Micro-graphic: Depleting Chart */}
              <div className="flex items-end gap-2 md:gap-3 h-24">
                {[80, 60, 40, 20, 5].map((height, i) => (
@@ -84,14 +84,14 @@ const WhyMvpsFail = () => {
                    initial={{ height: "100%" }}
                    whileInView={{ height: `${height}%` }}
                    transition={{ duration: 1, delay: i * 0.2 }}
-                   className={`w-6 md:w-8 rounded-t-sm ${i === 4 ? 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]' : 'bg-gray-800'}`}
+                   className={`w-6 md:w-8 rounded-t-sm ${i === 4 ? 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]' : 'bg-gray-200'}`}
                  />
                ))}
              </div>
-             <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent pointer-events-none"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">Budget Hemorrhage</h3>
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 tracking-tight">Budget Hemorrhage</h3>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
             &ldquo;Unforeseen complexities&rdquo; double your initial quote. You&apos;re held hostage halfway through development and drain your marketing budget.
           </p>
         </motion.div>
@@ -102,21 +102,21 @@ const WhyMvpsFail = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="bg-[#0A0A0A] rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-800 shadow-xl overflow-hidden group lg:col-span-1 md:col-span-2 lg:mx-0 md:mx-auto md:w-1/2 lg:w-full"
+          className="bg-white rounded-[2rem] p-6 md:p-8 flex flex-col border border-gray-200 shadow-lg overflow-hidden group lg:col-span-1 md:col-span-2 lg:mx-0 md:mx-auto md:w-1/2 lg:w-full"
         >
-          <div className="h-40 md:h-48 w-full bg-[#111] rounded-xl mb-8 flex items-center justify-center relative border border-gray-800/60 overflow-hidden p-6">
+          <div className="h-40 md:h-48 w-full bg-gray-50 rounded-xl mb-8 flex items-center justify-center relative border border-gray-200 overflow-hidden p-6">
              {/* Custom Micro-graphic: Spaghetti Code */}
              <div className="w-full space-y-2 opacity-60">
                <div className="w-3/4 h-2 bg-red-500/50 rounded animate-pulse" />
-               <div className="w-1/2 h-2 bg-gray-700 rounded ml-4" />
+               <div className="w-1/2 h-2 bg-gray-300 rounded ml-4" />
                <div className="w-full h-2 bg-red-500/30 rounded animate-pulse" />
-               <div className="w-5/6 h-2 bg-gray-700 rounded ml-2" />
+               <div className="w-5/6 h-2 bg-gray-300 rounded ml-2" />
                <div className="w-1/3 h-2 bg-red-500/80 rounded animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]" />
              </div>
-             <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent pointer-events-none"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">Technical Debt</h3>
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 tracking-tight">Technical Debt</h3>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
             Agencies use unscalable templates. The moment you get real users, the servers crash and you have to rewrite the app from scratch.
           </p>
         </motion.div>

@@ -41,9 +41,9 @@ const MobileSwipeCard = ({ project, index, removeCard, activeTab }: any) => {
       dragElastic={0.6}
       onDragEnd={handleDragEnd}
       onClick={isFront ? handleCardClick : undefined}
-      className={`absolute top-0 left-0 w-full h-[480px] bg-[#0A0A0A] rounded-[2rem] border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${isFront ? 'cursor-grab active:cursor-grabbing hover:border-gray-600' : 'pointer-events-none'}`}
+      className={`absolute top-0 left-0 w-full h-[480px] bg-white rounded-[2rem] border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col overflow-hidden ${isFront ? 'cursor-grab active:cursor-grabbing hover:border-gray-300' : 'pointer-events-none'}`}
     >
-      <div className="w-full relative h-[240px] bg-[#111] border-b border-gray-800 pointer-events-none">
+      <div className="w-full relative h-[240px] bg-gray-100 border-b border-gray-200 pointer-events-none">
         <Image
           src={project.img}
           alt={project.title}
@@ -56,9 +56,9 @@ const MobileSwipeCard = ({ project, index, removeCard, activeTab }: any) => {
         </div>
       </div>
       
-      <div className="p-6 flex flex-col flex-1 pointer-events-none bg-[#0A0A0A]">
-        <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{project.title}</h3>
-        <p className="text-gray-400 text-sm line-clamp-3 mb-4 leading-relaxed">{project.des}</p>
+      <div className="p-6 flex flex-col flex-1 pointer-events-none bg-white">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 tracking-tight">{project.title}</h3>
+        <p className="text-gray-600 text-sm line-clamp-3 mb-4 leading-relaxed">{project.des}</p>
         
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-800/60">
           <div className="flex items-center -space-x-2">
@@ -68,7 +68,7 @@ const MobileSwipeCard = ({ project, index, removeCard, activeTab }: any) => {
               </div>
             ))}
           </div>
-          <span className="text-xs font-semibold text-white/50">
+          <span className="text-xs font-semibold text-gray-500">
             Tap to View
           </span>
         </div>
@@ -90,7 +90,7 @@ const RecentWork = () => {
   };
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto flex flex-col items-center bg-[#050505] rounded-[2rem] md:rounded-[2.5rem] mt-16 md:mt-24 w-full border border-gray-800 shadow-2xl relative overflow-hidden">
+    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto flex flex-col items-center bg-white rounded-[2rem] md:rounded-[2.5rem] mt-16 md:mt-24 w-full border border-gray-200 shadow-xl relative overflow-hidden">
       {/* Decorative background gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
 
@@ -101,19 +101,19 @@ const RecentWork = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-10 md:mb-12 max-w-2xl relative z-10"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
           Recent Work
         </h2>
-        <p className="text-gray-400 text-base">
+        <p className="text-gray-600 text-base">
           We don&apos;t just build MVPs. We engineer digital products that dominate their markets.
         </p>
       </motion.div>
 
       {/* Tabs */}
-      <div className="flex bg-[#111111] p-1.5 rounded-full mb-8 md:mb-16 relative z-10 shadow-lg border border-gray-800">
+      <div className="flex bg-gray-100 p-1.5 rounded-full mb-8 md:mb-16 relative z-10 shadow-sm border border-gray-200">
         <button
           onClick={() => handleTabChange("web")}
-          className={`relative px-6 md:px-8 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors duration-300 ${activeTab === "web" ? "text-black" : "text-gray-400 hover:text-white"}`}
+          className={`relative px-6 md:px-8 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors duration-300 ${activeTab === "web" ? "text-gray-900" : "text-gray-500 hover:text-gray-900"}`}
         >
           {activeTab === "web" && (
             <motion.div layoutId="activeTabDark" className="absolute inset-0 bg-white rounded-full shadow-md" />
@@ -124,7 +124,7 @@ const RecentWork = () => {
         </button>
         <button
           onClick={() => handleTabChange("mobile")}
-          className={`relative px-6 md:px-8 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors duration-300 ${activeTab === "mobile" ? "text-black" : "text-gray-400 hover:text-white"}`}
+          className={`relative px-6 md:px-8 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors duration-300 ${activeTab === "mobile" ? "text-gray-900" : "text-gray-500 hover:text-gray-900"}`}
         >
           {activeTab === "mobile" && (
             <motion.div layoutId="activeTabDark" className="absolute inset-0 bg-white rounded-full shadow-md" />
@@ -165,8 +165,8 @@ const RecentWork = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className={`flex h-full ${colSpanClass}`}
                 >
-                  <Link href={project.link} target="_blank" className="group flex flex-col w-full bg-[#0A0A0A] rounded-[1.5rem] overflow-hidden transition-all duration-500 border border-gray-800 relative isolate hover:border-gray-600 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                    <div className={`w-full relative overflow-hidden bg-[#111] border-b border-gray-800 ${isLarge ? "aspect-[2.5/1]" : "aspect-[4/3]"}`}>
+                  <Link href={project.link} target="_blank" className="group flex flex-col w-full bg-white rounded-[1.5rem] overflow-hidden transition-all duration-500 border border-gray-200 relative isolate hover:border-gray-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+                    <div className={`w-full relative overflow-hidden bg-gray-100 border-b border-gray-200 ${isLarge ? "aspect-[2.5/1]" : "aspect-[4/3]"}`}>
                         <Image
                           src={project.img}
                           alt={project.title}
@@ -179,11 +179,11 @@ const RecentWork = () => {
                            <ArrowUpRight className="w-4 h-4 text-white" />
                         </div>
                     </div>
-                    <div className="p-6 md:p-8 flex flex-col flex-1 relative z-20 bg-[#0A0A0A]">
+                    <div className="p-6 md:p-8 flex flex-col flex-1 relative z-20 bg-white">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">{project.title}</h3>
                       </div>
-                      <p className="text-gray-400 text-sm flex-1 leading-relaxed mb-6">{project.des}</p>
+                      <p className="text-gray-600 text-sm flex-1 leading-relaxed mb-6">{project.des}</p>
                       <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-800/60">
                           <div className="flex items-center -space-x-2">
                             {project.iconLists?.map((icon, i) => (
@@ -192,7 +192,7 @@ const RecentWork = () => {
                               </div>
                             ))}
                           </div>
-                          <span className="text-xs font-semibold text-white/50 group-hover:text-white transition-colors">
+                          <span className="text-xs font-semibold text-gray-500 group-hover:text-[#0B57D0] transition-colors">
                             {activeTab === 'web' ? 'Visit Live Site' : 'View in Store'}
                           </span>
                       </div>
@@ -223,16 +223,16 @@ const RecentWork = () => {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="absolute inset-0 flex flex-col items-center justify-center bg-[#0A0A0A] rounded-[2rem] border border-gray-800 shadow-xl"
+                className="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-[2rem] border border-gray-200 shadow-xl"
               >
                 <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4">
                   <RotateCcw className="w-8 h-8 text-blue-500" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">You&apos;ve seen them all!</h3>
-                <p className="text-gray-400 text-sm mb-6 text-center px-6">Tap below to reset the stack and view the projects again.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">You&apos;ve seen them all!</h3>
+                <p className="text-gray-600 text-sm mb-6 text-center px-6">Tap below to reset the stack and view the projects again.</p>
                 <button 
                   onClick={() => setStackIndex(0)}
-                  className="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
+                  className="px-6 py-3 bg-[#0B57D0] text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
                 >
                   Reset Stack
                 </button>

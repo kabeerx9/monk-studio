@@ -65,7 +65,7 @@ const DifferentApproach = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-1 bg-[#0A0A0A] border border-gray-800 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
+          className="flex-1 bg-white border border-blue-200 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
         >
           {/* Premium Glow */}
           <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none"></div>
@@ -74,8 +74,8 @@ const DifferentApproach = () => {
             <Check className="w-3 h-3 md:w-4 md:h-4" /> The Monk Studio Way
           </div>
           
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 md:mb-8 border-b border-gray-800 pb-4 md:pb-6 tracking-tight relative z-10">
-            Production-Ready in 30 Days
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 border-b border-blue-100 pb-4 md:pb-6 tracking-tight relative z-10">
+            Production-Ready Faster
           </h3>
           
           <ul className="space-y-4 md:space-y-6 relative z-10">
@@ -86,7 +86,7 @@ const DifferentApproach = () => {
               "100% intellectual property ownership from the start.",
               "Enterprise-grade infrastructure built to scale instantly."
             ].map((text, i) => (
-              <li key={i} className="flex items-start gap-3 md:gap-4 text-gray-300">
+              <li key={i} className="flex items-start gap-3 md:gap-4 text-gray-700">
                 <div className="mt-1 bg-blue-500/20 rounded-full p-1 flex-shrink-0 border border-blue-500/30">
                   <Check className="w-3 h-3 md:w-4 md:h-4 text-blue-400" />
                 </div>
@@ -96,8 +96,8 @@ const DifferentApproach = () => {
           </ul>
           
           <div className="mt-8 md:mt-12 relative z-10">
-            <button className="flex items-center gap-2 text-white font-bold group text-sm md:text-base">
-              Start your 30-day build 
+            <button className="flex items-center gap-2 text-[#0B57D0] font-bold group text-sm md:text-base hover:text-blue-700">
+              Start your build 
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

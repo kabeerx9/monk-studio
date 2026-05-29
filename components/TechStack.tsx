@@ -12,7 +12,7 @@ const tools = [
   { name: "PostgreSQL", iconColor: "text-indigo-400", bg: "bg-indigo-400/10", border: "border-indigo-400/20", letter: "Pg" },
   { name: "Docker", iconColor: "text-sky-400", bg: "bg-sky-400/10", border: "border-sky-400/20", letter: "Do" },
   { name: "AWS", iconColor: "text-orange-400", bg: "bg-orange-400/10", border: "border-orange-400/20", letter: "AW" },
-  { name: "Vercel", iconColor: "text-white", bg: "bg-white/5", border: "border-white/10", letter: "Ve" },
+  { name: "Vercel", iconColor: "text-black", bg: "bg-black/5", border: "border-black/10", letter: "Ve" },
   { name: "Tailwind", iconColor: "text-teal-400", bg: "bg-teal-400/10", border: "border-teal-400/20", letter: "Tw" },
   { name: "Supabase", iconColor: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20", letter: "Su" },
 ];
@@ -53,7 +53,7 @@ const TechStack = () => {
         </p>
       </motion.div>
 
-      <div className="w-full bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden border border-gray-800">
+      <div className="w-full bg-white rounded-[3rem] p-8 md:p-16 shadow-xl relative overflow-hidden border border-gray-200">
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -69,12 +69,12 @@ const TechStack = () => {
             <motion.div 
               variants={itemVariants}
               key={index} 
-              className={`flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl border ${tool.border} bg-[#111111]/80 backdrop-blur-md hover:bg-[#1A1A1A] transition-all duration-300 group hover:-translate-y-2 hover:shadow-2xl`}
+              className={`flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl border ${tool.border} bg-gray-50/80 backdrop-blur-md hover:bg-white transition-all duration-300 group hover:-translate-y-2 hover:shadow-xl`}
             >
               <div className={`w-14 h-14 ${tool.bg} ${tool.iconColor} rounded-2xl flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
                 {tool.letter}
               </div>
-              <span className="text-sm font-semibold text-gray-300 group-hover:text-white transition-colors tracking-wide">{tool.name}</span>
+              <span className="text-sm font-semibold text-gray-600 group-hover:text-gray-900 transition-colors tracking-wide">{tool.name}</span>
             </motion.div>
           ))}
         </motion.div>
