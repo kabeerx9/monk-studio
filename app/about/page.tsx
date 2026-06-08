@@ -171,7 +171,7 @@ export default function AboutPage() {
           
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Ready to build something great?</h2>
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto relative z-10">
-            Let's discuss how our technical expertise can help bring your vision to life faster and better than you imagined.
+            Let&apos;s discuss how our technical expertise can help bring your vision to life faster and better than you imagined.
           </p>
           <Link 
             href="/contact"
