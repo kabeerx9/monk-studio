@@ -11,7 +11,7 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const pathname = usePathname();
 
-  const isContactPage = pathname === "/4/contact";
+  const isContactPage = pathname === "/contact";
 
   // Detect scroll to transition padding and background
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -35,7 +35,7 @@ const Navbar = () => {
           >
             
             {/* Logo Section */}
-            <Link href="/4#home" className="flex items-center gap-3 group shrink-0 relative z-10">
+            <Link href="/#home" className="flex items-center gap-3 group shrink-0 relative z-10">
               <div className="relative w-9 h-9 shrink-0 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[#0B57D0] rounded-xl rotate-[10deg] group-hover:rotate-[20deg] scale-95 group-hover:scale-105 opacity-20 transition-all duration-300"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-[#0B57D0] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-blue-500/30 transition-all duration-300">
@@ -49,11 +49,11 @@ const Navbar = () => {
 
             {/* Desktop Navigation Links (Absolutely Centered like Plateio) */}
             <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 z-0">
-              <Link href="/4#portfolio" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
+              <Link href="/#portfolio" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
                 <span className="absolute inset-0 rounded-full transition-opacity duration-300 -z-10 bg-gray-100 opacity-0 group-hover:opacity-100"></span>
                 <span className="relative transition-colors duration-300 text-gray-600 group-hover:text-black">Work</span>
               </Link>
-              <Link href="/4#testimonials" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
+              <Link href="/#testimonials" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
                 <span className="absolute inset-0 rounded-full transition-opacity duration-300 -z-10 bg-gray-100 opacity-0 group-hover:opacity-100"></span>
                 <span className="relative transition-colors duration-300 text-gray-600 group-hover:text-black">Testimonials</span>
               </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
               {!isContactPage && (
                 <div className="hidden md:flex items-center gap-3">
                   <Link 
-                    href="/4/contact" 
+                    href="/contact" 
                     className="relative inline-flex items-center justify-center gap-2 h-10 px-6 rounded-full bg-black text-white text-sm font-bold transition-all duration-300 group shadow-lg shadow-black/10 overflow-hidden"
                   >
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-[#0B57D0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -124,10 +124,10 @@ const Navbar = () => {
             
             {/* Mobile Menu Links */}
             <div className="flex flex-col gap-8 text-3xl font-bold text-gray-900 px-4">
-              <Link href="/4#portfolio" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
+              <Link href="/#portfolio" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
                 Work <span className="text-gray-300 font-normal text-2xl">01</span>
               </Link>
-              <Link href="/4#testimonials" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
+              <Link href="/#testimonials" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
                 Testimonials <span className="text-gray-300 font-normal text-2xl">02</span>
               </Link>
               <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
@@ -140,7 +140,7 @@ const Navbar = () => {
               <div className="mt-auto pt-12 w-full px-4">
                 <p className="text-sm text-gray-500 font-medium mb-4 uppercase tracking-wider">Start a project</p>
                 <Link 
-                  href="/4/contact" 
+                  href="/contact" 
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-[#0B57D0] text-white py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition-all group"
                 >

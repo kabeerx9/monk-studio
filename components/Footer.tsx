@@ -34,10 +34,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <h4 className="font-bold text-gray-900 mb-2">Company</h4>
               <Link href="/about" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">About Us</Link>
-              <Link href="/4#portfolio" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Work</Link>
-              <Link href="/4#testimonials" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Testimonials</Link>
-              <Link href="/4/process" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Process</Link>
-              <Link href="/4/contact" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Contact</Link>
+              <Link href="/#portfolio" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Work</Link>
+              <Link href="/#testimonials" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Testimonials</Link>
+              <Link href="/process" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Process</Link>
+              <Link href="/contact" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Contact</Link>
             </div>
             
             <div className="flex flex-col gap-4">

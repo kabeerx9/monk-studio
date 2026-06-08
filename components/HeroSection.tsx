@@ -36,14 +36,14 @@ const HeroSection = () => {
         className="flex flex-col sm:flex-row items-center gap-4 mb-16 md:mb-20 w-full sm:w-auto px-4"
       >
         <Link 
-          href="/4/contact"
+          href="/contact"
           className="group relative w-full sm:w-auto overflow-hidden bg-gradient-to-r from-blue-600 to-[#0B57D0] text-white px-8 py-4 rounded-full font-bold shadow-[0_0_40px_-10px_rgba(11,87,208,0.6)] hover:shadow-[0_0_60px_-15px_rgba(11,87,208,0.8)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
         >
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
           <span className="relative z-10">Schedule Strategy Call</span>
         </Link>
         <Link 
-          href="/4/process"
+          href="/process"
           className="w-full sm:w-auto bg-white/60 backdrop-blur-md text-gray-900 border border-gray-200 px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
         >
           View Our Process
@@ -77,23 +77,25 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
         className="flex flex-col md:flex-row gap-8 w-full items-center justify-center max-w-6xl mx-auto"
       >
-        <div className="w-full md:w-1/2 aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
+        <div className="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
           <Image 
             src="/images/dashboard_mockup.png" 
             alt="Dashboard" 
-            fill 
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+            width={1200}
+            height={800}
+            className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-in-out"
           />
-          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem]"></div>
+          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem] pointer-events-none"></div>
         </div>
-        <div className="w-full md:w-1/2 aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
+        <div className="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
            <Image 
             src="/images/mobile_mockup.png" 
             alt="Mobile App" 
-            fill 
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+            width={1200}
+            height={800}
+            className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-in-out"
           />
-          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem]"></div>
+          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem] pointer-events-none"></div>
         </div>
       </motion.div>
     </section>

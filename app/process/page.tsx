@@ -127,7 +127,7 @@ export default function ProcessPage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10 tracking-tight">Ready to start the clock?</h2>
           <Link 
-            href="/4/contact"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[#0B57D0] text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg relative z-10"
           >
             Schedule Strategy Call

@@ -19,13 +19,13 @@ const CTA = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 relative z-10 w-full sm:w-auto px-4 sm:px-0">
           <Link 
-            href="/4/contact" 
+            href="/contact" 
             className="group w-full sm:w-auto px-6 md:px-8 py-4 bg-[#0B57D0] text-white font-bold rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
           >
             Start Your Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link 
-            href="/4#portfolio" 
+            href="/#portfolio" 
             className="w-full sm:w-auto px-6 md:px-8 py-4 bg-transparent text-gray-900 font-semibold rounded-full border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95"
           >
             View Our Work
