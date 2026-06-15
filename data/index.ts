@@ -70,6 +70,15 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 99,
+    title: "CodeAudit",
+    des: "Automated Code Review & Auditing Platform.",
+    img: "https://image.thum.io/get/width/800/crop/800/https://codeaudit.dev",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://codeaudit.dev",
+    type: "web"
+  },
+  {
     id: 1,
     title: "Plateio",
     des: "Carpet Review SaaS - ReviewQR.",
@@ -79,7 +88,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 2,
+    id: 3,
     title: "Carpet Company",
     des: "A modern carpet company platform.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsuraj-xi.vercel.app%2F?w=800",
@@ -88,7 +97,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 3,
+    id: 4,
     title: "ReviewQR",
     des: "A platform for managing and generating Review QRs.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Freview-qr-kappa.vercel.app%2F?w=800",
@@ -97,7 +106,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 4,
+    id: 5,
     title: "Sumukha Sports Arena",
     des: "Turf booking website with scheduling.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsumukha-hji7.vercel.app%2F?w=800",
@@ -106,7 +115,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 5,
+    id: 6,
     title: "Voice AI SaaS",
     des: "Landing page for a Voice AI SaaS product.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsolution-smoky.vercel.app%2F?w=800",
@@ -115,7 +124,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 6,
+    id: 7,
     title: "SaaS Landing Page",
     des: "A modern SaaS landing page template.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmanthan-indol.vercel.app%2F?w=800",
@@ -124,7 +133,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 7,
+    id: 8,
     title: "Akima Films",
     des: "Video editor site and portfolio.",
     img: "https://s.wordpress.com/mshots/v1/http%3A%2F%2Fakimafilms.com?w=800",
@@ -133,7 +142,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 8,
+    id: 9,
     title: "Goreeva",
     des: "ERP Software client for schools.",
     img: "https://s.wordpress.com/mshots/v1/http%3A%2F%2Fgoreeva.com?w=800",
@@ -142,7 +151,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 9,
+    id: 10,
     title: "Travel Mockup",
     des: "Interactive travel website mockup.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftravel-mockup.vercel.app%2F?w=800",
@@ -151,7 +160,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 10,
+    id: 11,
     title: "Real Estate Platform",
     des: "Modern real estate platform.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmedia-monks-real-state.vercel.app%2F?w=800",
@@ -160,7 +169,7 @@ export const projects = [
     type: "web"
   },
   {
-    id: 11,
+    id: 12,
     title: "Construction SaaS",
     des: "SaaS landing page for construction management.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fconstruction-tau-hazel.vercel.app%2F?w=800",
@@ -170,7 +179,7 @@ export const projects = [
   },
   // Mobile Apps
   {
-    id: 12,
+    id: 13,
     title: "Goreeva Discussion",
     des: "Mobile discussion platform for Goreeva ERP.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.goreeva.discussion?w=800",
@@ -179,7 +188,7 @@ export const projects = [
     type: "mobile"
   },
   {
-    id: 13,
+    id: 14,
     title: "Goreeva Native",
     des: "Native ERP application for schools.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.goreeva_native?w=800",
@@ -188,7 +197,7 @@ export const projects = [
     type: "mobile"
   },
   {
-    id: 14,
+    id: 15,
     title: "Goreeva (iOS)",
     des: "iOS application for Goreeva ERP ecosystem.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fin%2Fapp%2Fgoreeva%2Fid6468810844?w=800",
@@ -197,7 +206,7 @@ export const projects = [
     type: "mobile"
   },
   {
-    id: 15,
+    id: 16,
     title: "Goreeva Teacher",
     des: "Dedicated app for teachers on Goreeva.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fin%2Fapp%2Fgoreeva-teacher%2Fid6477329536?w=800",
@@ -206,7 +215,7 @@ export const projects = [
     type: "mobile"
   },
   {
-    id: 16,
+    id: 17,
     title: "Discussion by Goreeva",
     des: "Discussion forum app for the Goreeva suite.",
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fdiscussion-by-goreeva%2Fid6740763704?w=800",
@@ -267,6 +276,12 @@ export const companies = [
     name: "Stripe",
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
+  },
+  {
+    id: 6,
+    name: "CodeAudit",
+    img: "",
+    nameImg: "",
   },
 ];
 

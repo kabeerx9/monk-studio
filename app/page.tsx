@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import RecentSitesPopup from "@/components/RecentSitesPopup";
 
 export default function RedesignedLandingPage() {
   return (
@@ -29,6 +30,7 @@ export default function RedesignedLandingPage() {
       </div>
 
       <Footer />
+      <RecentSitesPopup />
     </main>
   );
 }

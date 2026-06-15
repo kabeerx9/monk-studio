@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo.png",
-        href: "/logo.png",
+        url: "/monk-logo.svg",
+        href: "/monk-logo.svg",
       },
     ],
   },
   openGraph: {
     title: "Media Monk Studio | Digital Innovation & Web Development",
     description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
-    images: ["/logo.png"],
+    images: ["/monk-logo.svg"],
     url: 'https://mediamonk.studio',
     siteName: 'Media Monk Studio',
     locale: 'en_US',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Media Monk Studio | Digital Innovation & Web Development",
     description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
-    images: ["/logo.png"],
+    images: ["/monk-logo.svg"],
     creator: "@mediamonk",
   },
 };
@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo.png" sizes="any" />
+        <link rel="icon" href="/monk-logo.svg" sizes="any" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

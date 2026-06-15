@@ -10,6 +10,7 @@ const SocialProof = () => {
 
       {/* Client Names based on actual projects */}
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 mb-12">
+        <span className="text-2xl font-extrabold tracking-tight text-[#0B57D0]">CodeAudit</span>
         <span className="text-2xl font-bold tracking-tighter">Goreeva</span>
         <span className="text-xl font-bold tracking-widest lowercase">akimafilms</span>
         <span className="text-2xl font-black italic">Plateio</span>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -36,14 +37,11 @@ const Navbar = () => {
             
             {/* Logo Section */}
             <Link href="/#home" className="flex items-center gap-3 group shrink-0 relative z-10">
-              <div className="relative w-9 h-9 shrink-0 flex items-center justify-center">
-                <div className="absolute inset-0 bg-[#0B57D0] rounded-xl rotate-[10deg] group-hover:rotate-[20deg] scale-95 group-hover:scale-105 opacity-20 transition-all duration-300"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-[#0B57D0] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-blue-500/30 transition-all duration-300">
-                  <span className="text-white font-black text-sm tracking-tight">M</span>
-                </div>
+              <div className="relative w-9 h-9 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
               </div>
-              <span className="text-xl font-black tracking-tighter transition-colors duration-200 text-black group-hover:text-[#0B57D0] hidden sm:block">
-                Monk Studio
+              <span className="text-xl font-black tracking-tighter transition-colors duration-200 text-gray-900 hidden sm:block">
+                Monk <span className="text-[#0B57D0]">Studio</span>
               </span>
             </Link>
 
@@ -108,10 +106,12 @@ const Navbar = () => {
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between w-full mb-16">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-[#0B57D0] rounded-xl flex items-center justify-center text-white font-bold italic">
-                  M
+                <div className="relative w-9 h-9 shrink-0 flex items-center justify-center">
+                  <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
                 </div>
-                <span className="font-bold text-xl tracking-tight text-gray-900">Monk Studio</span>
+                <span className="font-black text-xl tracking-tighter text-gray-900">
+                  Monk <span className="text-[#0B57D0]">Studio</span>
+                </span>
               </div>
               <button 
                 className="relative w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-black hover:bg-gray-100 transition-colors border border-gray-200 shadow-sm"

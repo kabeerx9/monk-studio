@@ -10,9 +10,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between w-full mb-16 gap-10">
           
           <div className="flex flex-col max-w-sm">
-            <h3 className="text-2xl font-black tracking-tighter text-gray-900 mb-4">
-              MONK<span className="text-[#0B57D0]">STUDIO</span>
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-8 h-8 shrink-0 flex items-center justify-center">
+                <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
+              </div>
+              <h3 className="text-2xl font-black tracking-tighter text-gray-900">
+                Monk <span className="text-[#0B57D0]">Studio</span>
+              </h3>
+            </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
               Premium software development agency specializing in rapidly building, launching, and scaling high-performance MVPs and enterprise solutions.
             </p>

@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 's.wordpress.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.thum.io',
+      },
     ],
   },
 };
