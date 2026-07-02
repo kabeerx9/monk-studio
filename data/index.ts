@@ -87,24 +87,7 @@ export const projects = [
     link: "https://plateio.in",
     type: "web"
   },
-  {
-    id: 3,
-    title: "Carpet Company",
-    des: "A modern carpet company platform.",
-    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsuraj-xi.vercel.app%2F?w=800",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://suraj-xi.vercel.app/",
-    type: "web"
-  },
-  {
-    id: 4,
-    title: "ReviewQR",
-    des: "A platform for managing and generating Review QRs.",
-    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Freview-qr-kappa.vercel.app%2F?w=800",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://review-qr-kappa.vercel.app/",
-    type: "web"
-  },
+
   {
     id: 5,
     title: "Sumukha Sports Arena",
