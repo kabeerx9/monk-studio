@@ -70,6 +70,15 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 100,
+    title: "Hints City",
+    des: "Curated city discovery & local experiences platform.",
+    img: "https://image.thum.io/get/width/800/crop/800/https://hints.city",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://hints.city",
+    type: "web"
+  },
+  {
     id: 99,
     title: "CodeAudit",
     des: "Automated Code Review & Auditing Platform.",

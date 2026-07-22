@@ -9,27 +9,21 @@ import { motion } from "framer-motion";
 const teamMembers = [
   {
     name: "Kabeer Joshi",
-    role: "Full Stack Developer",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEPlPRhQRMVOQ/profile-displayphoto-scale_400_400/B56Z1oLhIeIAAk-/0/1775569349750?e=1781740800&v=beta&t=pupb5aAUs-fgcjD9Z3ux03OBw23EHjj4rY9y_toB5-M",
+    role: "Full Stack Developer & Founder",
+    image: "https://github.com/kabeerx9.png",
+    initials: "KJ",
     linkedin: "https://www.linkedin.com/in/kabeer-joshi-7173061aa",
     github: "https://github.com/kabeerx9/",
-    description: "Architecting scalable web applications and crafting pixel-perfect interfaces with a focus on modern web technologies."
+    description: "Architecting scalable web applications, custom SaaS platforms, and crafting pixel-perfect interfaces with modern web technologies."
   },
   {
     name: "Suraj Rawat",
-    role: "Backend Infrastructure",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQFlKD4NCn9WgA/profile-displayphoto-scale_200_200/B56Z2rClp0IkAY-/0/1776691077061?e=1782345600&v=beta&t=MCrjgj3PKg436DE100ZhYV1rT0LNZqSBgJcfGRHrSJE",
+    role: "Backend Infrastructure & Co-Founder",
+    image: "https://github.com/rawatsuri.png",
+    initials: "SR",
     linkedin: "https://www.linkedin.com/in/suraj-rawat-",
     github: "https://github.com/rawatsuri",
-    description: "Designing robust systems, building secure APIs, and managing cloud infrastructure to ensure high availability and performance."
-  },
-  {
-    name: "Zaid Williams",
-    role: "Team Member",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQEloYW_AAhQZg/profile-displayphoto-crop_800_800/B4EZ4SpFz7IMAI-/0/1778429224360?e=1782345600&v=beta&t=s0XRtJ1qS0tfx4kw78BffuTF9tXM7WxAAwS-Nvps1Uw",
-    linkedin: "https://www.linkedin.com/in/zaid-williams-b9317658/",
-    github: "", 
-    description: "Bringing creative problem-solving and strategic thinking to our digital products, ensuring seamless user experiences."
+    description: "Designing robust backend systems, building secure high-performance APIs, and managing cloud infrastructure to ensure 99.9% uptime."
   }
 ];
 
@@ -50,7 +44,7 @@ export default function AboutPage() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0B57D0] text-sm font-semibold mb-6 shadow-sm"
         >
           <Zap className="w-4 h-4" />
-          <span>The Minds Behind Monk Studio</span>
+          <span>The Team Behind Monk Studio</span>
         </motion.div>
 
         <motion.h1 
@@ -71,7 +65,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg md:text-xl text-gray-600 max-w-3xl leading-relaxed mb-16"
         >
-          We are a specialized development trio bridging the gap between world-class design and robust engineering. We focus on crafting high-performance digital products directly with you. No middle-men, just pure execution.
+          We are an engineering duo bridging the gap between world-class product design and robust full-stack engineering. We build web applications, SaaS platforms, AI products, and mobile apps directly with you. No middle-men, just pure execution.
         </motion.p>
         
         <motion.div
@@ -98,8 +92,8 @@ export default function AboutPage() {
              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0B57D0] flex items-center justify-center mb-6 shadow-inner">
                <Zap className="w-7 h-7" />
              </div>
-             <h3 className="text-xl font-bold text-gray-900 mb-3">Direct Collaboration</h3>
-             <p className="text-base text-gray-600">Work directly with the founders. No bureaucracy or delays, just results.</p>
+             <h3 className="text-xl font-bold text-gray-900 mb-3">Direct Founder Access</h3>
+             <p className="text-base text-gray-600">Work directly with senior engineers. No project managers or delays, just high quality code.</p>
            </div>
         </motion.div>
       </section>
@@ -110,11 +104,11 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">Meet the Team</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              The technical experts turning your ideas into scalable, production-ready reality.
+              The technical duo turning ambitious ideas into scalable, production-ready digital products.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
             {teamMembers.map((member, index) => (
               <motion.div 
                 key={member.name}
@@ -125,8 +119,17 @@ export default function AboutPage() {
                 className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full"
               >
                 <div className="relative mb-8 inline-block self-start">
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md relative z-10">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md relative z-10 bg-gradient-to-br from-blue-600 to-[#0B57D0] flex items-center justify-center text-white font-bold text-2xl">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback cleanly if network image fails
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <span className="absolute -z-10">{member.initials}</span>
                   </div>
                   <div className="absolute inset-0 bg-[#0B57D0] rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 transform scale-150 -z-10"></div>
                 </div>
