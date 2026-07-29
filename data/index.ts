@@ -70,6 +70,15 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 101,
+    title: "Coaster",
+    des: "Modern landing page for a client — recently delivered.",
+    img: "https://image.thum.io/get/width/800/crop/800/https://coaster-landing.vercel.app/",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://coaster-landing.vercel.app/",
+    type: "web"
+  },
+  {
     id: 100,
     title: "Hints City",
     des: "Curated city discovery & local experiences platform.",
