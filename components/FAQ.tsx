@@ -30,14 +30,14 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 px-6 max-w-4xl mx-auto w-full">
+    <section className="py-16 md:py-32 px-4 md:px-6 max-w-4xl mx-auto w-full">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-10 md:mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
           Frequently Asked Questions
         </h2>
         <p className="text-gray-500 text-lg">
@@ -59,7 +59,7 @@ const FAQ = () => {
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
             >
-              <span className={`text-lg font-semibold transition-colors ${openIndex === index ? "text-[#0B57D0]" : "text-gray-900 group-hover:text-[#0B57D0]"}`}>
+              <span className={`text-base md:text-lg font-semibold transition-colors min-w-0 flex-1 pr-2 ${openIndex === index ? "text-[#0B57D0]" : "text-gray-900 group-hover:text-[#0B57D0]"}`}>
                 {faq.question}
               </span>
               <motion.div

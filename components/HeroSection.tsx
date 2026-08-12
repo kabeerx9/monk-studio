@@ -114,7 +114,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold tracking-[-0.04em] text-gray-950 leading-[1.06] mb-7"
+            className="text-[1.85rem] min-[400px]:text-[2.15rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold tracking-[-0.04em] text-gray-950 leading-[1.12] mb-7 px-1"
           >
             We build software
             <br />
@@ -143,7 +143,7 @@ const HeroSection = () => {
           >
             <Link
               href="/contact"
-              className="group flex items-center gap-3 bg-gray-950 text-white pl-7 pr-5 py-4 rounded-full text-[15px] font-semibold hover:bg-gray-800 transition-all duration-200 shadow-xl shadow-gray-950/15 hover:shadow-2xl hover:shadow-gray-950/20 hover:-translate-y-0.5"
+              className="group flex items-center justify-center gap-3 bg-gray-950 text-white pl-7 pr-5 py-4 rounded-full text-[15px] font-semibold hover:bg-gray-800 transition-all duration-200 shadow-xl shadow-gray-950/15 hover:shadow-2xl hover:shadow-gray-950/20 hover:-translate-y-0.5"
             >
               Start a project
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 group-hover:bg-white/20 transition-all">
@@ -165,7 +165,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex items-center justify-center gap-8 md:gap-14 mb-14 md:mb-16"
+          className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center gap-y-6 gap-x-4 sm:gap-8 md:gap-14 mb-14 md:mb-16 max-w-sm sm:max-w-none mx-auto"
         >
           {[
             { value: `${projects}+`, label: "Projects shipped" },
@@ -173,7 +173,7 @@ const HeroSection = () => {
             { value: `${satisfaction}%`, label: "Satisfaction rate" },
             { value: "2–4 wk", label: "Avg delivery" },
           ].map((stat, i) => (
-            <div key={i} className="flex flex-col items-center">
+            <div key={i} className="flex flex-col items-center text-center min-w-0">
               <span className="text-xl md:text-2xl font-extrabold text-gray-900 tabular-nums">
                 {stat.value}
               </span>
@@ -203,20 +203,20 @@ const HeroSection = () => {
             className="relative rounded-2xl md:rounded-[1.25rem] overflow-hidden border border-gray-200/60 bg-white shadow-[0_50px_100px_-30px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.02)]"
           >
             {/* Browser chrome */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 bg-[#F7F8FA]">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-between px-3 md:px-5 py-3 border-b border-gray-100 bg-[#F7F8FA]">
+              <div className="hidden md:flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                 <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                 <span className="w-3 h-3 rounded-full bg-[#28C840]" />
               </div>
 
               {/* Tab switcher */}
-              <div className="flex items-center bg-gray-200/60 rounded-lg p-[3px]">
+              <div className="flex items-center bg-gray-200/60 rounded-lg p-[3px] max-w-full">
                 {(["dashboard", "mobile"] as const).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActivePreview(tab)}
-                    className={`relative px-5 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 ${
+                    className={`relative px-3 sm:px-5 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 ${
                       activePreview === tab
                         ? "text-gray-900"
                         : "text-gray-400 hover:text-gray-600"
@@ -230,13 +230,23 @@ const HeroSection = () => {
                       />
                     )}
                     <span className="relative z-10">
-                      {tab === "dashboard" ? "Web Platform" : "Mobile App"}
+                      {tab === "dashboard" ? (
+                        <>
+                          <span className="sm:hidden">Web</span>
+                          <span className="hidden sm:inline">Web Platform</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="sm:hidden">Mobile</span>
+                          <span className="hidden sm:inline">Mobile App</span>
+                        </>
+                      )}
                     </span>
                   </button>
                 ))}
               </div>
 
-              <div className="w-[68px]" />
+              <div className="hidden md:block w-[68px]" />
             </div>
 
             {/* Screenshot area */}
@@ -284,7 +294,7 @@ const HeroSection = () => {
           <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.2em] mb-5">
             Trusted by
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 md:gap-x-14 gap-y-3 opacity-30 hover:opacity-50 transition-opacity duration-700">
+          <div className="flex flex-wrap justify-center items-center gap-x-6 md:gap-x-14 gap-y-3 opacity-30 hover:opacity-50 transition-opacity duration-700 px-2">
             <span className="text-xl font-extrabold tracking-tight text-[#0B57D0]">CodeAudit</span>
             <span className="text-xl font-bold tracking-tighter text-gray-900">Goreeva</span>
             <span className="text-lg font-black italic text-gray-900">Plateio</span>

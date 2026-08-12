@@ -26,7 +26,7 @@ const Navbar = () => {
           isScrolled ? "py-3" : "py-6"
         }`}
       >
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 max-w-7xl w-full">
           <div 
             className={`relative mx-auto flex items-center justify-between transition-all duration-500 ease-out rounded-full h-16 px-4 ${
               isScrolled 

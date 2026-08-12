@@ -14,7 +14,7 @@ import RecentSitesPopup from "@/components/RecentSitesPopup";
 
 export default function RedesignedLandingPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white">
+    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white overflow-x-hidden">
       <Navbar />
       
       <div className="relative">

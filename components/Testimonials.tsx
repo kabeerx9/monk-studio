@@ -6,15 +6,15 @@ import { Quote } from "lucide-react";
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-32 px-6 max-w-7xl mx-auto w-full">
+    <section id="testimonials" className="py-16 md:py-32 px-4 md:px-6 max-w-7xl mx-auto w-full">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16 max-w-2xl mx-auto"
+        className="text-center mb-12 md:mb-16 max-w-2xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
           Client Success Stories
         </h2>
         <p className="text-gray-500 text-lg">
@@ -30,7 +30,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-[#F8F9FA] rounded-[2rem] p-10 flex flex-col relative border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+            className="bg-[#F8F9FA] rounded-[2rem] p-6 md:p-10 flex flex-col relative border border-gray-100 hover:shadow-xl transition-all duration-300 group"
           >
             <Quote className="w-10 h-10 text-blue-100 mb-6 group-hover:text-blue-200 transition-colors" />
             

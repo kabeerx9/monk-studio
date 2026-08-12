@@ -15,12 +15,12 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white">
+    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white overflow-x-hidden">
       <Navbar />
       
       <div className="relative pt-32 pb-24 px-4 md:px-6 max-w-7xl mx-auto min-h-[90vh] flex items-center">
         {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(800px,100%)] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 w-full relative z-10">
           
@@ -70,7 +70,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-7/12"
           >
-            <div className="bg-white border border-gray-200 rounded-[2rem] p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div className="bg-white border border-gray-200 rounded-[2rem] p-5 sm:p-8 md:p-12 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[80px] rounded-full pointer-events-none"></div>
 
               {formState === "success" ? (

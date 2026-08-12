@@ -2,14 +2,14 @@ import React from "react";
 
 const SocialProof = () => {
   return (
-    <section className="py-20 px-6 max-w-5xl mx-auto flex flex-col items-center text-center">
+    <section className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto flex flex-col items-center text-center w-full">
       <h2 className="text-xl md:text-2xl font-medium text-gray-900 max-w-3xl leading-relaxed mb-12">
         Trusted by visionary teams and forward-thinking founders
         <span className="text-[#0B57D0]"> — companies that chose speed over uncertainty.</span>
       </h2>
 
       {/* Client Names based on actual projects */}
-      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 mb-12">
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 mb-12 px-2">
         <span className="text-2xl font-extrabold tracking-tight text-[#0B57D0]">CodeAudit</span>
         <span className="text-2xl font-bold tracking-tighter">Goreeva</span>
         <span className="text-xl font-bold tracking-widest lowercase">akimafilms</span>

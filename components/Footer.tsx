@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-gray-100 bg-white pt-20 pb-10 px-6">
+    <footer className="w-full border-t border-gray-100 bg-white pt-20 pb-10 px-6 overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <div className="flex flex-col md:flex-row justify-between w-full mb-16 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left w-full mb-16 gap-10">
           
-          <div className="flex flex-col max-w-sm">
+          <div className="flex flex-col max-w-sm items-center md:items-start">
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8 shrink-0 flex items-center justify-center">
                 <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
@@ -21,7 +21,7 @@ const Footer = () => {
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
               Premium software development agency specializing in rapidly building, launching, and scaling high-performance MVPs and enterprise solutions.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               {socialMedia.map((social) => (
                 <Link 
                   href={social.link} 
@@ -35,8 +35,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-16 md:gap-24 flex-wrap">
-            <div className="flex flex-col gap-4">
+          <div className="flex gap-12 sm:gap-16 md:gap-24 flex-wrap justify-center">
+            <div className="flex flex-col gap-4 items-center md:items-start">
               <h4 className="font-bold text-gray-900 mb-2">Company</h4>
               <Link href="/about" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">About Us</Link>
               <Link href="/#portfolio" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Our Work</Link>
@@ -45,7 +45,7 @@ const Footer = () => {
               <Link href="/contact" className="text-sm text-gray-500 hover:text-[#0B57D0] transition-colors">Contact</Link>
             </div>
             
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 items-center md:items-start">
               <h4 className="font-bold text-gray-900 mb-2">Services</h4>
               <span className="text-sm text-gray-500">Web Development</span>
               <span className="text-sm text-gray-500">Mobile Apps</span>
@@ -56,7 +56,7 @@ const Footer = () => {
 
         </div>
 
-        <div className="w-full border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+        <div className="w-full border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400 text-center">
           <p>© {new Date().getFullYear()} Monk Studio. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-gray-900 transition-colors">Privacy Policy</Link>
