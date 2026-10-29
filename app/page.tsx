@@ -1,36 +1,16 @@
-import React from "react";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import SocialProof from "@/components/SocialProof";
-import WhyMvpsFail from "@/components/WhyMvpsFail";
-import DifferentApproach from "@/components/DifferentApproach";
-import TechStack from "@/components/TechStack";
-import RecentWork from "@/components/RecentWork";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-import RecentSitesPopup from "@/components/RecentSitesPopup";
+import type { Metadata } from "next";
+import StudioHomepage from "@/components/StudioHomepage";
 
-export default function RedesignedLandingPage() {
-  return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white overflow-x-hidden">
-      <Navbar />
-      
-      <div className="relative">
-        <HeroSection />
-        <SocialProof />
-        <WhyMvpsFail />
-        <DifferentApproach />
-        <TechStack />
-        <RecentWork />
-        <Testimonials />
-        <FAQ />
-        <CTA />
-      </div>
+export const metadata: Metadata = {
+  title: "Monk Studio | Strategy, Design & Digital Engineering",
+  description: "An independent digital product studio bringing strategy, design, and engineering together. Explore our websites, SaaS platforms, and mobile applications.",
+  openGraph: {
+    title: "Monk Studio | Built with intent. Made to matter.",
+    description: "Strategy, design, and engineering for ambitious digital experiences.",
+    images: ["/monk-logo.svg"],
+  },
+};
 
-      <Footer />
-      <RecentSitesPopup />
-    </main>
-  );
+export default function HomePage() {
+  return <StudioHomepage />;
 }
