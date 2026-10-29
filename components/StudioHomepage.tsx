@@ -20,6 +20,8 @@ const services = [
 const featured = [
   { title: "Akima Films", category: "Creative portfolio", image: "/images/Akima.png", href: "http://akimafilms.com", color: "#dce4da", description: "A cinematic home for a creative vision.", className: "film" },
   { title: "Real Estate Platform", category: "Web application", image: "/images/Real-estate.png", href: "https://media-monks-real-state.vercel.app/", color: "#e3e8ee", description: "Making the search for a home feel effortless.", className: "property" },
+  { title: "Book Asia", category: "Travel experience", image: "/images/Bookasia.png", href: undefined, color: "#dce9eb", description: "A digital introduction to destinations and travel services.", className: "property" },
+  { title: "Xpressells", category: "Digital storefront", image: "/images/Xpressells.png", href: undefined, color: "#f0e2d5", description: "A bold storefront for a creative asset collection.", className: "film" },
 ];
 
 const questions = [
@@ -76,11 +78,13 @@ export default function StudioHomepage() {
         <section id="portfolio" className={styles.work}>
           <div className={styles.wrap}>
             <div className={styles.sectionHeading}><div><SectionLabel>Selected work</SectionLabel><h2>Good thinking.<br /><span className={styles.muted}>Out in the world.</span></h2></div><p>A closer look at the brands,<br />platforms, and experiences we build.</p></div>
-            <div className={styles.projectGrid}>{featured.map((project, i) => <article key={project.title} className={styles.project}>
-              <a href={project.href} target="_blank" rel="noopener noreferrer" className={`${styles.projectVisual} ${styles[project.className]}`} style={{ backgroundColor: project.color }} aria-label={`Visit ${project.title}`}>
-                <div className={styles.projectNumber}>0{i + 1} / SELECTED WORK</div><div className={styles.browserFrame}><div className={styles.browserBar}><span /><span /><span /><i>{project.title}</i></div><div className={styles.projectScreenshot}><Image src={project.image} alt={`${project.title} website preview`} fill sizes="(max-width: 800px) 90vw, 44vw" className={styles.projectImage} /></div></div><span className={styles.projectArrow}><ArrowUpRight size={23} /></span>
-              </a><div className={styles.projectMeta}><div><h3>{project.title}</h3><p>{project.description}</p></div><span>{project.category}</span></div>
-            </article>)}</div>
+            <div className={styles.projectGrid}>{featured.map((project, i) => {
+              const Visual = project.href ? "a" : "div";
+              return <article key={project.title} className={styles.project}>
+              <Visual href={project.href} target={project.href ? "_blank" : undefined} rel={project.href ? "noopener noreferrer" : undefined} className={`${styles.projectVisual} ${styles[project.className]}`} style={{ backgroundColor: project.color }} aria-label={project.href ? `Visit ${project.title}` : undefined}>
+                <div className={styles.projectNumber}>0{i + 1} / SELECTED WORK</div><div className={styles.browserFrame}><div className={styles.browserBar}><span /><span /><span /><i>{project.title}</i></div><div className={styles.projectScreenshot}><Image src={project.image} alt={`${project.title} website preview`} fill sizes="(max-width: 800px) 90vw, 44vw" className={styles.projectImage} /></div></div>{project.href && <span className={styles.projectArrow}><ArrowUpRight size={23} /></span>}
+              </Visual><div className={styles.projectMeta}><div><h3>{project.title}</h3><p>{project.description}</p></div><span>{project.category}</span></div>
+            </article>;})}</div>
             <div className={styles.workMore}><p>From early-stage products to everyday business tools.</p><button type="button" className={styles.textLink} onClick={() => setShowProjects(!showProjects)} aria-expanded={showProjects} aria-controls="project-library">{showProjects ? "Close project library" : "Explore the project library"}{showProjects ? <Minus size={18} /> : <Plus size={18} />}</button></div>
             {showProjects && <div id="project-library" className={styles.library}><div className={styles.filters} aria-label="Filter projects">{["web", "mobile"].map(item => <button type="button" key={item} onClick={() => setFilter(item)} aria-pressed={filter === item} className={filter === item ? styles.filterActive : ""}>{item === "web" ? "Web experiences" : "Mobile applications"}</button>)}</div><div className={styles.libraryGrid}>{projects.filter(p => p.type === filter).map(p => <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer"><div><h3>{p.title}</h3><p>{p.des}</p></div><ArrowUpRight size={22} /></a>)}</div></div>}
           </div>
@@ -91,6 +95,15 @@ export default function StudioHomepage() {
           <div className={styles.serviceList}>{services.map((item, i) => <div key={item.title} className={`${styles.serviceItem} ${service === i ? styles.serviceOpen : ""}`}><h3><button type="button" onClick={() => setService(service === i ? -1 : i)} aria-expanded={service === i} aria-controls={`service-${i}`}><span className={styles.serviceNumber}>0{i + 1}</span>{item.title}<span className={styles.serviceToggle}>{service === i ? <Minus size={19} /> : <Plus size={19} />}</span></button></h3>{service === i && <div id={`service-${i}`} className={styles.serviceContent}><p>{item.text}</p><div>{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>}</div>)}</div>
         </section>
 
+        <section className={styles.sectors}>
+          <div className={styles.wrap}><div className={styles.sectionHeading}><div><SectionLabel>Built around your business</SectionLabel><h2>Different challenges.<br /><span className={styles.muted}>The same considered approach.</span></h2></div><p>Useful experiences start with<br />understanding the context.</p></div><div className={styles.sectorGrid}>{[
+            ["01", "Software & SaaS", "Turn a complex product into an intuitive experience, with clear onboarding, thoughtful dashboards, and workflows that support everyday use.", "PRODUCT PLATFORMS / INTERNAL TOOLS"],
+            ["02", "Commerce & digital brands", "Connect the brand story with the buying journey. Clear product presentation and purposeful interaction help customers find their next step.", "STOREFRONTS / BRAND WEBSITES"],
+            ["03", "Education & operations", "Bring information, people, and processes together. We shape tools around the practical needs of the people who rely on them.", "ERP INTERFACES / MOBILE EXPERIENCES"],
+            ["04", "Travel & property", "Make information easier to discover and explore. Rich content, clear navigation, and considered enquiry flows help visitors move from interest to action.", "DISCOVERY / CUSTOMER EXPERIENCES"],
+          ].map(([n,t,p,tag])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p><small>{tag}</small></article>)}</div></div>
+        </section>
+
         <section className={styles.approach}>
           <div className={styles.wrap}><div className={styles.sectionHeading}><div><SectionLabel light>The way forward</SectionLabel><h2>Big-picture thinking.<br /><span>Detail-level care.</span></h2></div><Link href="/process" className={styles.lightLink}>Inside our process <ArrowUpRight size={20} /></Link></div><div className={styles.processGrid}>{[
             ["01", "Discover the right problem.", "We get close to your goals and your users. Clear priorities become the foundation for everything that follows."],
@@ -99,10 +112,27 @@ export default function StudioHomepage() {
           ].map(([number, title, text]) => <article key={number}><div className={styles.processNumber}>{number}<ArrowUpRight size={22} /></div><h3>{title}</h3><p>{text}</p></article>)}</div><div className={styles.approachFoot}><span><Check size={16} /> Clear communication</span><span><Check size={16} /> Shared decisions</span><span><Check size={16} /> Considered delivery</span><span><Check size={16} /> Long-term thinking</span></div></div>
         </section>
 
+        <section id="engineering" className={`${styles.wrap} ${styles.engineering}`}>
+          <div><SectionLabel>Behind the experience</SectionLabel><h2>The details you notice.<br /><span className={styles.muted}>The foundations you trust.</span></h2><p>Good engineering gives good design room to work. We make technical decisions around your product&apos;s requirements, the team maintaining it, and the direction it needs to grow.</p><Link href="/process" className={styles.textLink}>See how it comes together <ArrowUpRight size={18}/></Link></div>
+          <div className={styles.qualityList}>{[
+            ["Designed for real use", "Responsive layouts, clear interaction states, and accessible patterns make the experience useful across screens and situations."],
+            ["Structured to evolve", "Reusable components, practical architecture, and thoughtful integrations help your product grow without unnecessary complexity."],
+            ["Reviewed before release", "We review key journeys, handle important edge cases, and check the product against the agreed requirements before launch."],
+            ["Handed over with clarity", "Source code, access, and project documentation are planned into the handover, with next steps agreed together."],
+          ].map(([t,p])=><article key={t}><Check size={18}/><div><h3>{t}</h3><p>{p}</p></div></article>)}</div>
+          <div className={styles.techRibbon}><p>A practical toolkit.<br /><strong>Chosen for the product.</strong></p><div>{["Next.js", "React", "TypeScript", "React Native", "Node.js", "Java / Spring Boot"].map(t=><span key={t}>{t}</span>)}</div></div>
+        </section>
+
         <section id="testimonials" className={`${styles.wrap} ${styles.reviews}`}>
           <div className={styles.reviewSide}><SectionLabel>In their words</SectionLabel><h2>Good work.<br /><span className={styles.muted}>Better relationships.</span></h2><div className={styles.reviewControls}><button type="button" onClick={() => setReview((review + testimonials.length - 1) % testimonials.length)} aria-label="Previous testimonial"><ArrowLeft size={20} /></button><span>0{review + 1} / 0{testimonials.length}</span><button type="button" onClick={() => setReview((review + 1) % testimonials.length)} aria-label="Next testimonial"><ArrowRight size={20} /></button></div></div>
           <div className={styles.reviewQuote} aria-live="polite"><span className={styles.quoteMark} aria-hidden="true">“</span><blockquote key={review}>{activeReview.quote}</blockquote><div className={styles.reviewAuthor}>{activeReview.img ? <Image src={activeReview.img} alt={activeReview.name} width={52} height={52} /> : <span className={styles.avatar}>{activeReview.name.charAt(0)}</span>}<div><strong>{activeReview.name}</strong><span>{activeReview.title}</span></div></div></div>
         </section>
+
+        <section id="engagements" className={styles.engagements}><div className={styles.wrap}><div className={styles.sectionHeading}><div><SectionLabel>Ways to work together</SectionLabel><h2>The right partnership.<br /><span className={styles.muted}>For where you are now.</span></h2></div><p>Start with your priorities.<br />Shape the engagement around them.</p></div><div className={styles.engagementGrid}>{[
+          ["01 / FIND THE DIRECTION", "Discovery & definition", "For a new idea or an unclear challenge. We help define the audience, priorities, experience, and technical direction before a larger build.", ["A focused discovery brief", "Clear scope and next steps", "A shared product direction"]],
+          ["02 / BRING IT TO LIFE", "A focused project", "For a defined website, platform, or application. A connected design and engineering process takes the work from brief through release.", ["Agreed milestones and reviews", "Design and implementation", "Launch and handover planning"]],
+          ["03 / KEEP MOVING FORWARD", "An ongoing partnership", "For a product that needs to keep evolving. We work with your priorities to plan improvements, support releases, and maintain momentum.", ["A prioritised development roadmap", "Regular feedback and iteration", "An agreed support arrangement"]],
+        ].map(([n,t,p,items])=><article key={String(n)}><span>{n}</span><h3>{t}</h3><p>{p}</p><ul>{(items as string[]).map(item=><li key={item}><Check size={14}/>{item}</li>)}</ul><Link href="/contact">Discuss the fit <ArrowUpRight size={18}/></Link></article>)}</div></div></section>
 
         <section className={`${styles.wrap} ${styles.faq}`}><div><SectionLabel>A little clarity</SectionLabel><h2>Before we<br /><span className={styles.muted}>get started.</span></h2><p>Have something else in mind?<br /><Link href="/contact">Let&apos;s talk it through <ArrowUpRight size={16} /></Link></p></div><div className={styles.faqList}>{questions.map(item => <details key={item.question}><summary>{item.question}<Plus size={18} className={styles.faqPlus} /></summary><p>{item.answer}</p></details>)}</div></section>
 

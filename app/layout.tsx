@@ -11,9 +11,9 @@ import { ThemeProvider } from "./provider";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mediamonk.studio'),
-  title: "Media Monk Studio | Digital Innovation & Web Development",
-  description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
+  metadataBase: new URL('https://monk-studio.vercel.app'),
+  title: "Monk Studio | Strategy, Design & Digital Engineering",
+  description: "An independent digital product studio connecting strategy, design, and engineering to build considered websites, platforms, and applications.",
   icons: {
     icon: [
       {
@@ -23,18 +23,18 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Media Monk Studio | Digital Innovation & Web Development",
-    description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
+    title: "Monk Studio | Strategy, Design & Digital Engineering",
+    description: "An independent digital product studio connecting strategy, design, and engineering.",
     images: ["/monk-logo.svg"],
-    url: 'https://mediamonk.studio',
-    siteName: 'Media Monk Studio',
+    url: 'https://monk-studio.vercel.app',
+    siteName: 'Monk Studio',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Monk Studio | Digital Innovation & Web Development",
-    description: "We create stunning digital experiences that drive results. Specializing in modern web development, e-commerce solutions, and digital innovation.",
+    title: "Monk Studio | Strategy, Design & Digital Engineering",
+    description: "An independent digital product studio connecting strategy, design, and engineering.",
     images: ["/monk-logo.svg"],
     creator: "@mediamonk",
   },

@@ -1,159 +1,40 @@
 "use client";
-import React, { useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import s from "./SiteChrome.module.css";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  const pathname = usePathname();
-
-  const isContactPage = pathname === "/contact";
-
-  // Detect scroll to transition padding and background
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 20);
-  });
-
-  return (
-    <>
-      <header 
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
-          isScrolled ? "py-3" : "py-6"
-        }`}
-      >
-        <div className="container mx-auto px-4 max-w-7xl w-full">
-          <div 
-            className={`relative mx-auto flex items-center justify-between transition-all duration-500 ease-out rounded-full h-16 px-4 ${
-              isScrolled 
-                ? "bg-white/90 backdrop-blur-md shadow-sm border border-gray-200/50" 
-                : "bg-transparent border border-transparent"
-            }`}
-          >
-            
-            {/* Logo Section */}
-            <Link href="/#home" className="flex items-center gap-3 group shrink-0 relative z-10">
-              <div className="relative w-9 h-9 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
-              </div>
-              <span className="text-xl font-black tracking-tighter transition-colors duration-200 text-gray-900 hidden sm:block">
-                Monk <span className="text-[#0B57D0]">Studio</span>
-              </span>
-            </Link>
-
-            {/* Desktop Navigation Links (Absolutely Centered like Plateio) */}
-            <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 z-0">
-              <Link href="/#portfolio" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
-                <span className="absolute inset-0 rounded-full transition-opacity duration-300 -z-10 bg-gray-100 opacity-0 group-hover:opacity-100"></span>
-                <span className="relative transition-colors duration-300 text-gray-600 group-hover:text-black">Work</span>
-              </Link>
-              <Link href="/#testimonials" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
-                <span className="absolute inset-0 rounded-full transition-opacity duration-300 -z-10 bg-gray-100 opacity-0 group-hover:opacity-100"></span>
-                <span className="relative transition-colors duration-300 text-gray-600 group-hover:text-black">Testimonials</span>
-              </Link>
-              <Link href="/about" className="relative text-[14px] font-bold px-5 py-2 rounded-full transition-all duration-300 group overflow-hidden">
-                <span className="absolute inset-0 rounded-full transition-opacity duration-300 -z-10 bg-gray-100 opacity-0 group-hover:opacity-100"></span>
-                <span className="relative transition-colors duration-300 text-gray-600 group-hover:text-black">About Us</span>
-              </Link>
-            </nav>
-
-            {/* Desktop CTA & Mobile Toggle */}
-            <div className="flex items-center gap-4 relative z-10">
-              {!isContactPage && (
-                <div className="hidden md:flex items-center gap-3">
-                  <Link 
-                    href="/contact" 
-                    className="relative inline-flex items-center justify-center gap-2 h-10 px-6 rounded-full bg-black text-white text-sm font-bold transition-all duration-300 group shadow-lg shadow-black/10 overflow-hidden"
-                  >
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-[#0B57D0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative flex items-center gap-2">
-                      Book a Call
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </Link>
-                </div>
-              )}
-
-              {/* Mobile Menu Toggle */}
-              <button 
-                type="button"
-                className="md:hidden relative w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-black hover:bg-gray-100 transition-colors border border-gray-200 shadow-sm"
-                onClick={() => setIsOpen(true)}
-                aria-label="Toggle menu"
-              >
-                <Menu className="w-5 h-5" />
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </header>
-
-      {/* Fullscreen Mobile Menu Overlay (Light Mode) */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] bg-white/95 backdrop-blur-2xl flex flex-col px-6 pt-8 pb-12 overflow-y-auto"
-          >
-            {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between w-full mb-16">
-              <div className="flex items-center gap-3">
-                <div className="relative w-9 h-9 shrink-0 flex items-center justify-center">
-                  <Image src="/monk-logo.svg" alt="Monk Studio" fill className="object-contain" />
-                </div>
-                <span className="font-black text-xl tracking-tighter text-gray-900">
-                  Monk <span className="text-[#0B57D0]">Studio</span>
-                </span>
-              </div>
-              <button 
-                className="relative w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-black hover:bg-gray-100 transition-colors border border-gray-200 shadow-sm"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5 text-[#0B57D0]" />
-              </button>
-            </div>
-            
-            {/* Mobile Menu Links */}
-            <div className="flex flex-col gap-8 text-3xl font-bold text-gray-900 px-4">
-              <Link href="/#portfolio" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
-                Work <span className="text-gray-300 font-normal text-2xl">01</span>
-              </Link>
-              <Link href="/#testimonials" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
-                Testimonials <span className="text-gray-300 font-normal text-2xl">02</span>
-              </Link>
-              <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-[#0B57D0] transition-colors flex items-center justify-between border-b border-gray-100 pb-6">
-                About Us <span className="text-gray-300 font-normal text-2xl">03</span>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Footer/CTA */}
-            {!isContactPage && (
-              <div className="mt-auto pt-12 w-full px-4">
-                <p className="text-sm text-gray-500 font-medium mb-4 uppercase tracking-wider">Start a project</p>
-                <Link 
-                  href="/contact" 
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-[#0B57D0] text-white py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition-all group"
-                >
-                  Book a Strategy Call
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-};
-
-export default Navbar;
+const links = [{href:"/#portfolio",name:"Work"}, {href:"/#services",name:"Expertise"}, {href:"/about",name:"The studio"}, {href:"/process",name:"Our process"}];
+export default function Navbar() {
+  const [open,setOpen]=useState(false);
+  const [scrolled,setScrolled]=useState(false);
+  const pathname=usePathname();
+  const dialog=useRef<HTMLDivElement>(null);
+  const toggle=useRef<HTMLButtonElement>(null);
+  useEffect(()=>{ const update=()=>setScrolled(window.scrollY>20); update(); window.addEventListener("scroll",update,{passive:true}); return ()=>window.removeEventListener("scroll",update); },[]);
+  useEffect(()=>{
+    if(!open) return;
+    const original=document.body.style.overflow;
+    const opener=toggle.current;
+    document.body.style.overflow="hidden";
+    dialog.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    function onKey(event:KeyboardEvent) {
+      if(event.key==="Escape") {setOpen(false);return;}
+      if(event.key!=="Tab") return;
+      const items=dialog.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+      if(!items?.length) return;
+      const first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+    document.addEventListener("keydown",onKey);
+    return ()=>{document.body.style.overflow=original;document.removeEventListener("keydown",onKey);opener?.focus();};
+  },[open]);
+  const brand=<><Image src="/monk-logo.svg" alt="" width={35} height={35}/><span>Monk <em>Studio</em></span></>;
+  return <><header className={`${s.header} ${scrolled?s.headerScrolled:""}`}><div className={s.navWrap}><Link href="/#home" aria-label="Monk Studio home" className={s.brand}>{brand}</Link><nav aria-label="Main navigation" className={s.desktopNav}>{links.map(link=><Link key={link.href} href={link.href} aria-current={pathname===link.href?"page":undefined}>{link.name}</Link>)}</nav><Link href="/contact" className={s.navCTA} aria-current={pathname==="/contact"?"page":undefined}>Start a project <ArrowUpRight size={16}/></Link><button type="button" ref={toggle} className={s.menuToggle} aria-label="Open navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={()=>setOpen(true)}><Menu size={20}/></button></div></header>
+    {open&&<div className={s.overlay}><div className={s.dialog} ref={dialog} role="dialog" aria-modal="true" aria-label="Site navigation" id="mobile-navigation"><div className={s.dialogTop}><Link href="/#home" aria-label="Monk Studio home" onClick={()=>setOpen(false)} className={s.brand}>{brand}</Link><button type="button" aria-label="Close navigation" onClick={()=>setOpen(false)}><X size={21}/></button></div><nav aria-label="Mobile navigation" className={s.mobileNav}>{[...links,{href:"/contact",name:"Start a project"}].map((link,i)=><Link key={link.href} href={link.href} aria-current={pathname===link.href?"page":undefined} onClick={()=>setOpen(false)}>{link.name}<span>0{i+1}</span></Link>)}</nav><div className={s.dialogBottom}><p>Good ideas start with a conversation.</p><a href="mailto:hello@mediamonkstudio.in">hello@mediamonkstudio.in</a></div></div></div>}
+  </>;
+}

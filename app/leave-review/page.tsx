@@ -1,120 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { submitReviewAction } from './actions';
-import { CheckCircle2, Star } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { submitReviewAction } from "./actions";
+import { StudioShell, StudioHero } from "@/components/StudioPages";
+import s from "@/components/StudioPages.module.css";
 
 export default function LeaveReviewPage() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
-
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   async function handleSubmit(formData: FormData) {
-    setStatus('submitting');
-    const result = await submitReviewAction(formData);
-    if (result.success) {
-      setStatus('success');
-    } else {
-      setStatus('idle');
-      alert("Something went wrong. Please try again.");
-    }
+    setStatus("submitting");
+    try {
+      const result = await submitReviewAction(formData);
+      setStatus(result.success ? "success" : "error");
+    } catch { setStatus("error"); }
   }
-
-  return (
-    <main className="min-h-screen bg-gray-50 font-sans selection:bg-[#0B57D0] selection:text-white">
-      <Navbar />
-
-      <div className="pt-32 pb-20 px-4 max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-            How did we do?
-          </h1>
-          <p className="text-lg text-gray-600">
-            We value your feedback. Let us know how your experience was working with Media Monks Studio.
-          </p>
-        </div>
-
-        {status === 'success' ? (
-          <div className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center">
-            <CheckCircle2 className="w-16 h-16 text-green-500 mb-6" />
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank you for your review!</h2>
-            <p className="text-gray-600">Your feedback has been submitted successfully.</p>
-          </div>
-        ) : (
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-            <form action={handleSubmit} className="space-y-6">
-              
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Your Name</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  required
-                  placeholder="John Doe"
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0B57D0]/20 focus:border-[#0B57D0] transition-all"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Company Name</label>
-                  <input 
-                    type="text" 
-                    name="company" 
-                    required
-                    placeholder="Acme Corp"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0B57D0]/20 focus:border-[#0B57D0] transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Your Role / Title</label>
-                  <input 
-                    type="text" 
-                    name="role" 
-                    required
-                    placeholder="CEO / Founder"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0B57D0]/20 focus:border-[#0B57D0] transition-all"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Your Review</label>
-                <textarea 
-                  name="review" 
-                  required
-                  rows={6}
-                  placeholder="Share your experience working with us..."
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0B57D0]/20 focus:border-[#0B57D0] transition-all resize-none"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Profile Photo (Optional)</label>
-                <input 
-                  type="file" 
-                  name="image" 
-                  accept="image/*"
-                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0B57D0]/20 focus:border-[#0B57D0] transition-all file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#0B57D0]/10 file:text-[#0B57D0] hover:file:bg-[#0B57D0]/20"
-                />
-              </div>
-
-              <div className="pt-4">
-                <button 
-                  type="submit"
-                  disabled={status === 'submitting'}
-                  className="w-full bg-[#0B57D0] hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg disabled:opacity-70 flex justify-center items-center gap-2"
-                >
-                  {status === 'submitting' ? 'Submitting...' : 'Submit Review'}
-                </button>
-              </div>
-
-            </form>
-          </div>
-        )}
-      </div>
-
-      <Footer />
-    </main>
-  );
+  return <StudioShell><StudioHero label="Your experience" title="Good work grows" accent="through honest feedback." description="Tell us what it was like to work with Monk Studio. What worked, what made a difference, and what we could do better next time." />
+    <section className={s.wrap}><div className={s.reviewLayout}><aside><h2>A few words.<br />A valuable perspective.</h2><p>Your experience helps us understand the parts of our collaboration that matter most. A useful review can describe the project, the way we worked together, and the details that stood out.</p><p>Need help with an ongoing project? <Link href="/contact" style={{color:"#0b57d0"}}>Contact the studio directly.</Link></p></aside><div className={s.formCard}>
+    {status === "success" ? <div className={s.notice} role="status"><CheckCircle2 size={32} style={{marginBottom:15}}/><strong>Thank you for sharing your experience.</strong>Your review has been submitted successfully.<Link href="/" className={s.emailLink}>Back to the studio <ArrowUpRight size={18}/></Link></div> : <form action={handleSubmit} className={s.form}>
+      <div className={s.field}><label htmlFor="review-name">Your name *</label><input id="review-name" name="name" required autoComplete="name" maxLength={120} placeholder="Your full name" /></div>
+      <div className={s.formGrid}><div className={s.field}><label htmlFor="review-company">Company *</label><input id="review-company" name="company" required autoComplete="organization" maxLength={160} placeholder="Company or project" /></div><div className={s.field}><label htmlFor="review-role">Your role *</label><input id="review-role" name="role" required autoComplete="organization-title" maxLength={120} placeholder="Your role or title" /></div></div>
+      <div className={s.field}><label htmlFor="review-message">Your experience *</label><textarea id="review-message" name="review" required rows={7} maxLength={5000} placeholder="Tell us about the project and your experience working together..." /></div>
+      <div className={s.field}><label htmlFor="review-image">Profile photo (optional)</label><input id="review-image" name="image" type="file" accept="image/*" /></div>
+      <p className={s.formNote}>Please share only information and images you are comfortable submitting to the studio. Read our <Link href="/privacy">Privacy Policy</Link>.</p>
+      {status === "error" && <p role="alert" className={`${s.notice} ${s.error}`}>We could not save your review. Your details are still here. Please try again or <Link href="/contact">contact the studio</Link>.</p>}
+      <button className={s.submit} type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Submitting your feedback..." : "Share your experience"}<ArrowUpRight size={20}/></button>
+    </form>}</div></div></section>
+  </StudioShell>;
 }

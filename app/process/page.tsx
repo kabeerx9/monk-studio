@@ -1,142 +1,31 @@
-"use client";
-import React from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import { Telescope, Cpu, Rocket, ShieldCheck } from "lucide-react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import { StudioShell, StudioHero, StudioLabel, StudioCTA } from "@/components/StudioPages";
+import s from "@/components/StudioPages.module.css";
 
-const processSteps = [
-  {
-    id: "01",
-    title: "Discovery & Architecture",
-    duration: "Phase 1",
-    icon: <Telescope className="w-6 h-6 text-blue-500" />,
-    description: "We don't guess. We map out your entire database schema, user flows, and system architecture before writing a single line of code. You receive a comprehensive technical blueprint.",
-    metrics: ["System Blueprint", "Database Schema", "Tech Stack Selection"]
-  },
-  {
-    id: "02",
-    title: "Core Infrastructure & Backend",
-    duration: "Phase 2",
-    icon: <Cpu className="w-6 h-6 text-purple-500" />,
-    description: "Our senior engineers set up enterprise-grade cloud infrastructure, configure secure authentication, build the core APIs, and lay the foundation using battle-tested modules to save weeks of dev time.",
-    metrics: ["Cloud Setup", "Auth Integration", "Core API Endpoints"]
-  },
-  {
-    id: "03",
-    title: "Frontend & Rapid Iteration",
-    duration: "Phase 3",
-    icon: <Rocket className="w-6 h-6 text-orange-500" />,
-    description: "We build out the pixel-perfect user interface and connect it to the backend. You get access to a live staging environment to watch the product come to life and provide immediate feedback.",
-    metrics: ["Pixel-Perfect UI", "Live Staging Link", "Real-time Feedback"]
-  },
-  {
-    id: "04",
-    title: "QA, Security & Launch",
-    duration: "Phase 4",
-    icon: <ShieldCheck className="w-6 h-6 text-green-500" />,
-    description: "We rigorously test for edge cases, perform security audits, and optimize performance. Once approved, we deploy to production and transfer 100% of the codebase ownership to your team.",
-    metrics: ["Security Audit", "Production Deployment", "IP Transfer"]
-  }
+export const metadata: Metadata = { title: "Our Process | Monk Studio", description: "From discovery and design through engineering, launch, and evolution. See how we turn clear priorities into considered digital products." };
+
+const phases = [
+  { number:"01", title:"Understand the opportunity.", text:"We start with your business, users, and the problem worth solving. We discuss the existing experience, constraints, and priorities so the scope supports a clear purpose.", deliverables:["Discovery brief", "User journeys", "Scope & priorities"], decision:"What we agree on", note:"The problem, the audience, what success means, and the most valuable first release. You bring the business context; we help turn it into a direction." },
+  { number:"02", title:"Shape the experience.", text:"We explore how the product should work and feel. Structure, flows, and visual design come together through reviews, making the experience tangible before implementation.", deliverables:["Experience structure", "Interface direction", "Interactive prototypes"], decision:"What you review", note:"The key journeys, important screens, and design direction. We discuss tradeoffs early and refine the experience around real needs." },
+  { number:"03", title:"Engineer the foundations.", text:"We translate the agreed experience into a working product. Frontend, backend, integrations, and infrastructure are planned together, with previews to make progress visible.", deliverables:["Working application", "Integrations", "Staging previews"], decision:"How we stay aligned", note:"Regular demonstrations, a shared view of priorities, and an agreed feedback process. Changes are discussed with their scope and timeline implications." },
+  { number:"04", title:"Prepare for the real world.", text:"We review important flows, responsive behavior, performance, and the requirements agreed for release. Launch preparation includes deployment planning and a clear handover.", deliverables:["Release checks", "Production deployment", "Handover notes"], decision:"What launch needs", note:"A reviewed release, the right access, a clear understanding of known limitations, and agreement on who owns each part of the launch." },
+  { number:"05", title:"Learn, refine, evolve.", text:"Once people use the product, new priorities become clearer. We can help maintain the experience, act on feedback, and plan the next release around what matters most.", deliverables:["Next-step roadmap", "Product improvements", "Agreed support"], decision:"What comes next", note:"The support scope, review cadence, and next priorities are agreed together. Your product can evolve without losing the clarity of its original foundations." },
 ];
 
 export default function ProcessPage() {
-  return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white overflow-hidden">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <div className="relative pt-40 pb-20 px-4 md:px-6 max-w-5xl mx-auto text-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(800px,100%)] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1]">
-            How we ship your <span className="text-[#0B57D0]">Product.</span>
-          </h1>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
-            No magic. No cutting corners. Just a hyper-optimized engineering process leveraging reusable modules and senior talent to build enterprise-grade software.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Process Timeline */}
-      <div className="px-4 md:px-6 max-w-4xl mx-auto pb-32 relative z-10">
-        
-        {/* Timeline Line */}
-        <div className="absolute left-8 md:left-[50px] top-0 bottom-0 w-px bg-gray-200 hidden md:block"></div>
-
-        <div className="flex flex-col gap-12 md:gap-24">
-          {processSteps.map((step, index) => (
-            <motion.div 
-              key={step.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7 }}
-              className="flex flex-col md:flex-row gap-6 md:gap-12 relative"
-            >
-              {/* Timeline Node */}
-              <div className="hidden md:flex flex-col items-center z-10">
-                <div className="w-24 h-24 bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-lg mb-4 relative group">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-full scale-0 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-                  {step.icon}
-                </div>
-              </div>
-
-              {/* Card Content */}
-              <div className="flex-1 bg-white border border-gray-200 rounded-[2rem] p-8 md:p-12 shadow-xl relative overflow-hidden group hover:border-gray-300 transition-colors duration-500">
-                <div className="absolute top-0 right-0 text-[8rem] font-black text-gray-900/[0.03] -translate-y-10 translate-x-10 pointer-events-none group-hover:scale-110 transition-transform duration-700">
-                  {step.id}
-                </div>
-                
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">{step.title}</h3>
-                  <div className="px-4 py-1.5 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-sm font-semibold whitespace-nowrap w-fit">
-                    {step.duration}
-                  </div>
-                </div>
-
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 relative z-10">
-                  {step.description}
-                </p>
-
-                <div className="flex flex-wrap gap-3 relative z-10">
-                  {step.metrics.map((metric, i) => (
-                    <div key={i} className="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 text-sm font-medium">
-                      {metric}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA at the bottom of process */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-32 text-center bg-white border border-gray-200 rounded-[2rem] p-12 shadow-xl relative overflow-hidden"
-        >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10 tracking-tight">Ready to start the clock?</h2>
-          <Link 
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-[#0B57D0] text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg relative z-10"
-          >
-            Schedule Strategy Call
-          </Link>
-        </motion.div>
-
-      </div>
-
-      <Footer />
-    </main>
-  );
+  return <StudioShell>
+    <StudioHero label="Our process" title="Clear from the start." accent="Considered at every step." description="A connected process for strategy, design, and engineering. You see the direction, understand the decisions, and stay close to the work as it takes shape." />
+    <section className={s.wrap}><div className={s.timeline}>{phases.map(phase=><article key={phase.number} className={s.phase}><span className={s.phaseNumber}>{phase.number}</span><div><h2>{phase.title}</h2><p className={s.phaseIntro}>{phase.text}</p><ul>{phase.deliverables.map(t=><li key={t}>{t}</li>)}</ul></div><aside className={s.phaseAside}><strong>{phase.decision}</strong><p>{phase.note}</p></aside></article>)}</div></section>
+    <section className={s.dark}><div className={s.wrap}><StudioLabel light>How we collaborate</StudioLabel><h2>Less uncertainty.<br /><span className={s.muted}>More shared understanding.</span></h2><div className={s.threeGrid} style={{marginTop:40}}>{[
+      ["Your business context", "Your insights, existing materials, and access to decision-makers help us shape a product that fits the real business."],
+      ["One shared direction", "We agree on priorities and feedback checkpoints, so everyone understands the next decision and the reason behind it."],
+      ["Space for useful feedback", "You review work as it develops. We consolidate feedback, discuss changes, and keep the roadmap realistic."],
+    ].map(([t,p])=><div className={s.body} key={t}><h3 style={{color:"#f1f4e9"}}>{t}</h3><p>{p}</p></div>)}</div></div></section>
+    <section className={s.section}><div className={s.wrap}><div className={s.headingRow}><div><StudioLabel>Before the first step</StudioLabel><h2>You do not need<br /><span className={s.muted}>a perfect brief.</span></h2></div><p>A few clear starting points are enough to open a productive conversation.</p></div><div className={s.threeGrid}>{[
+      ["01", "The opportunity", "What are you trying to improve, launch, or change? Tell us about the problem and the people who experience it."],
+      ["02", "The starting point", "Share the product, brand materials, research, or examples you already have. An early idea is a valid starting point too."],
+      ["03", "The practical details", "Let us know about your ideal timing, budget considerations, and key stakeholders so we can discuss a suitable approach."],
+    ].map(([n,t,p])=><article className={s.principle} key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></div></section>
+    <StudioCTA title="A clear path begins" accent="with a conversation." />
+  </StudioShell>;
 }

@@ -51,7 +51,7 @@
 .sectionHeading { display: flex; justify-content: space-between; align-items: flex-end; gap: 35px; margin-bottom: 45px; }
 .sectionHeading h2 { margin-top: 24px; }
 .sectionHeading > p { font-size: 13px; line-height: 1.8; color: #69756c; padding-bottom: 4px; }
-.projectGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.projectGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px 30px; }
 .projectVisual { position: relative; display: flex; align-items: center; min-height: 380px; padding: 75px 36px 60px; border-radius: 4px; overflow: hidden; }
 .projectNumber { position: absolute; left: 24px; top: 25px; font-size: 8px; letter-spacing: .14em; color: #5c685c; }
 .browserFrame { width: 100%; border-radius: 6px; overflow: hidden; box-shadow: 0 24px 45px -15px #172a3a55; transform: perspective(1000px) rotateY(-7deg) rotateX(5deg); transition: transform .65s; }
@@ -107,7 +107,7 @@
 .approachFoot { display: flex; justify-content: space-between; gap: 20px; padding-top: 25px; border-top: 1px solid #3c5045; }
 .approachFoot span { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; color: #c3cfc3; }
 .approachFoot svg { color: #b6cda0; }
-.reviews { padding-block: 110px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; border-bottom: 1px solid #d6ddd2; }
+.reviews { padding-block: 110px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; border-top: 1px solid #d6ddd2; }
 .reviewSide h2 { margin-top: 24px; font-size: clamp(34px, 3.4vw, 49px); }
 .reviewControls { display: flex; align-items: center; gap: 20px; margin-top: 40px; }
 .reviewControls button { width: 42px; height: 42px; border: 1px solid #d0d9cc; border-radius: 50%; display: grid; place-items: center; transition: background .2s, color .2s; }
@@ -146,6 +146,41 @@
 .contactSymbol svg { width: 100%; height: 100%; }
 .contactBottom { position: relative; display: flex; justify-content: space-between; gap: 20px; margin-top: 65px; border-top: 1px solid #5c88db; padding-block: 23px; color: #c3d5f8; font-size: 10px; }
 .contactBottom span:last-child { font-size: 8px; letter-spacing: .13em; }
+.sectors { background: #edf0eb; padding-block: 85px; }
+.sectorGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px 70px; }
+.sectorGrid article { border-top: 1px solid #cbd5c5; padding-top: 23px; }
+.sectorGrid article > span { font-size: 10px; color: var(--blue); }
+.sectorGrid h3 { font-size: 25px; font-weight: 500; letter-spacing: -.035em; margin-top: 28px; }
+.sectorGrid p { font-size: 13px; line-height: 1.9; color: #6c7a63; margin-top: 15px; max-width: 470px; }
+.sectorGrid small { display: block; font-size: 8px; letter-spacing: .1em; color: #78876d; margin-top: 25px; }
+.engineering { padding-block: 95px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 65px 95px; }
+.engineering h2 { margin-top: 25px; font-size: clamp(35px, 3.4vw, 49px); }
+.engineering > div:first-child > p:not(.label) { font-size: 14px; line-height: 1.9; color: #6d7b65; margin-top: 25px; max-width: 470px; }
+.engineering .textLink { margin-top: 20px; }
+.qualityList { display: flex; flex-direction: column; }
+.qualityList article { display: flex; gap: 17px; padding-block: 23px; border-top: 1px solid #d4ddce; }
+.qualityList article > svg { color: var(--blue); flex-shrink: 0; margin-top: 4px; }
+.qualityList h3 { font-size: 18px; font-weight: 500; letter-spacing: -.025em; }
+.qualityList p { font-size: 12px; line-height: 1.9; color: #6d7b65; margin-top: 9px; }
+.techRibbon { grid-column: 1 / -1; border-top: 1px solid #d4ddce; padding-top: 30px; display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 35px; }
+.techRibbon p { font-size: 11px; color: #7a876f; line-height: 1.9; }
+.techRibbon strong { font-weight: 500; color: #46593b; }
+.techRibbon > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.techRibbon > div > span { padding: 9px 14px; border: 1px solid #d4ddce; border-radius: 3px; font-size: 11px; color: #617358; }
+.engagements { background: #edf0eb; padding-block: 85px; }
+.engagementGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.engagementGrid article { display: flex; flex-direction: column; padding: 30px; background: #f8f9f6; border: 1px solid #d6dfd0; border-radius: 4px; }
+.engagementGrid article > span { font-size: 8px; letter-spacing: .09em; color: #6f835f; }
+.engagementGrid h3 { margin-top: 30px; font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -.04em; }
+.engagementGrid p { margin-top: 18px; font-size: 12px; line-height: 1.9; color: #6f7c65; }
+.engagementGrid ul { margin-block: 25px 30px; display: flex; flex-direction: column; gap: 11px; }
+.engagementGrid li { display: flex; align-items: start; gap: 10px; font-size: 10px; color: #53674a; }
+.engagementGrid li svg { flex-shrink: 0; color: var(--blue); }
+.engagementGrid a { margin-top: auto; padding-top: 17px; border-top: 1px solid #d6dfd0; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
+.home section[id] { scroll-margin-top: 110px; }
+@media(max-width:1100px) { .engineering { gap: 50px; } .engagementGrid { gap: 16px; } .engagementGrid article { padding: 25px 22px; } .engagementGrid h3 { font-size: 21px; } }
+@media(max-width:800px) { .sectors, .engagements { padding-block: 60px; } .sectorGrid { gap: 35px; } .sectorGrid h3 { font-size: 22px; } .engineering { grid-template-columns: 1fr; padding-top: 60px; gap: 35px; } .techRibbon { grid-template-columns: 1fr; gap: 20px; } .engagementGrid { grid-template-columns: 1fr; gap: 20px; } .engagementGrid article { padding: 28px; } .engagementGrid h3 { font-size: 27px; margin-top: 22px; } .engagementGrid p { max-width: 600px; font-size: 13px; } .engagementGrid li { font-size: 12px; } }
+@media(max-width:520px) { .sectorGrid { grid-template-columns: 1fr; } .sectorGrid h3 { font-size: 25px; } .techRibbon > div { gap: 8px; } .techRibbon > div > span { font-size: 10px; padding: 8px 10px; } .engineering h2 { font-size: 35px; } }
 @media (min-width: 1600px) { .hero h1 { font-size: 88px; } }
 @media (max-width: 1100px) { .wrap { width: calc(100% - 64px); } .hero { gap: 25px; } .hero h1 { font-size: 61px; } .heroArt { min-height: 530px; } .heroCopy { padding-top: 28px; } .actions { gap: 14px; } .heroFoot { margin-top: 30px; } .heroFootMark { display: none; } .clients { grid-template-columns: 150px 1fr; gap: 20px; } .clientNames { gap: 18px; flex-wrap: wrap; } .clientNames > span { font-size: 18px; } .intro { gap: 35px; } .services, .reviews, .faq { gap: 55px; } .projectVisual { min-height: 300px; padding-inline: 25px; } .projectMeta { flex-direction: column; gap: 8px; } .contactSymbol { width: 240px; right: -45px; top: 65px; } }
 @media (max-width: 800px) { .wrap { width: calc(100% - 40px); } .hero { grid-template-columns: 1fr; padding-top: 125px; padding-bottom: 35px; gap: 35px; } .heroCopy { padding-top: 0; } .hero h1 { font-size: clamp(52px, 9.8vw, 75px); margin-top: 25px; } .heroIntro { max-width: 490px; font-size: 15px; margin-top: 24px; } .heroArt { min-height: 420px; } .sculpture { object-position: 50% 55%; } .heroFoot { margin-top: 30px; padding-top: 17px; } .heroFootMark { display: flex; } .clients { grid-template-columns: 1fr; padding-block: 20px 40px; gap: 24px; } .clients > p br { display: none; } .clients > p strong { margin-left: 4px; } .clientNames { justify-content: flex-start; gap: 20px 35px; } .intro { grid-template-columns: 1fr; padding-block: 65px; gap: 22px; } .intro > .label { padding-top: 0; } .introBottom { gap: 30px; margin-top: 25px; } .introBottom p { font-size: 13px; } .home h2 { font-size: clamp(34px, 6.2vw, 46px); } .work { padding-block: 60px 30px; } .sectionHeading { margin-bottom: 32px; } .sectionHeading > p { display: none; } .projectGrid { gap: 22px; } .projectVisual { min-height: 245px; padding: 60px 17px 45px; } .projectNumber { font-size: 6px; left: 17px; top: 20px; } .projectMeta h3 { font-size: 18px; } .projectMeta p { font-size: 10px; } .projectArrow { width: 30px; height: 30px; bottom: 12px; right: 12px; } .projectArrow svg { width: 18px; } .workMore p { display: none; } .workMore { justify-content: flex-end; margin-top: 30px; padding-top: 15px; } .services { padding-block: 65px; grid-template-columns: 1fr; gap: 30px; } .servicesIntro > p:not(.label) { max-width: 450px; } .expertiseMark { display: none; } .serviceItem h3 button { font-size: 21px; } .approach { padding-block: 60px 25px; } .processGrid { gap: 25px; } .processGrid h3 { font-size: 19px; margin-top: 30px; } .approachFoot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } .reviews, .faq { padding-block: 65px; gap: 40px; grid-template-columns: 1fr; } .reviewSide { position: relative; } .reviewControls { position: absolute; right: 0; bottom: 0; margin: 0; gap: 10px; } .reviewQuote blockquote { min-height: 95px; max-width: 600px; } .reviewSide h2 { max-width: 70%; } .faq { gap: 30px; } .contactBanner { padding-top: 55px; } .contactBanner h2 { font-size: clamp(54px, 9vw, 76px); } .contactSymbol { width: 180px; top: 60px; right: -50px; opacity: .3; } .contactBanner > div > div:first-child { position: relative; z-index: 1; } .contactBottom { margin-top: 45px; } }
