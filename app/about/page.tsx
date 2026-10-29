@@ -1,187 +1,176 @@
 "use client";
-import React from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Link from "next/link";
-import { Github, Linkedin, ArrowRight, Code2, Zap, Rocket } from "lucide-react";
-import { motion } from "framer-motion";
 
-const teamMembers = [
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Blocks,
+  Check,
+  Code2,
+  Compass,
+  Lightbulb,
+  MessageSquareText,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from "lucide-react";
+
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+const values = [
   {
-    name: "Kabeer Joshi",
-    role: "Full Stack Developer & Founder",
-    image: "https://github.com/kabeerx9.png",
-    initials: "KJ",
-    linkedin: "https://www.linkedin.com/in/kabeer-joshi-7173061aa",
-    github: "https://github.com/kabeerx9/",
-    description: "Architecting scalable web applications, custom SaaS platforms, and crafting pixel-perfect interfaces with modern web technologies."
+    icon: Compass,
+    title: "Clarity before code",
+    description: "We align on the problem, priorities, and success criteria before deciding what to build.",
   },
   {
-    name: "Suraj Rawat",
-    role: "Backend Infrastructure & Co-Founder",
-    image: "https://github.com/rawatsuri.png",
-    initials: "SR",
-    linkedin: "https://www.linkedin.com/in/suraj-rawat-",
-    github: "https://github.com/rawatsuri",
-    description: "Designing robust backend systems, building secure high-performance APIs, and managing cloud infrastructure to ensure 99.9% uptime."
-  }
+    icon: Users,
+    title: "Collaboration by default",
+    description: "Frequent updates and shared decisions keep every project moving in the right direction.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality that lasts",
+    description: "We design dependable foundations that are secure, maintainable, and ready to evolve.",
+  },
+];
+
+const capabilities = [
+  "Product strategy and MVP planning",
+  "UI/UX design and prototyping",
+  "Web and mobile development",
+  "SaaS platforms and internal tools",
+  "E-commerce experiences",
+  "Ongoing optimization and support",
+];
+
+const steps = [
+  { number: "01", icon: MessageSquareText, title: "Understand", description: "We learn about your goals, users, constraints, and the opportunity behind the idea." },
+  { number: "02", icon: Lightbulb, title: "Shape", description: "We turn the brief into a focused roadmap, clear user experience, and practical delivery plan." },
+  { number: "03", icon: Code2, title: "Build", description: "Design and engineering move together through fast, visible iterations and regular feedback." },
+  { number: "04", icon: Rocket, title: "Launch & improve", description: "We help release with confidence, learn from real use, and improve what matters next." },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white overflow-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-white font-sans text-gray-900 selection:bg-[#0B57D0] selection:text-white">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 px-4 md:px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
-        {/* Background Grid */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0B57D0] text-sm font-semibold mb-6 shadow-sm"
-        >
-          <Zap className="w-4 h-4" />
-          <span>The Team Behind Monk Studio</span>
-        </motion.div>
 
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 max-w-4xl leading-[1.1]"
-        >
-          Crafting Digital Excellence, <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#0B57D0]">
-            Without the Bloat.
-          </span>
-        </motion.h1>
+      <section className="relative px-4 pb-24 pt-36 md:px-6 md:pb-32 md:pt-44">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="absolute left-1/2 top-20 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-100/70 blur-[100px]" />
 
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-gray-600 max-w-3xl leading-relaxed mb-16"
-        >
-          We are an engineering duo bridging the gap between world-class product design and robust full-stack engineering. We build web applications, SaaS platforms, AI products, and mobile apps directly with you. No middle-men, just pure execution.
-        </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto"
-        >
-           <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
-             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0B57D0] flex items-center justify-center mb-6 shadow-inner">
-               <Code2 className="w-7 h-7" />
-             </div>
-             <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Excellence</h3>
-             <p className="text-base text-gray-600">Built right the first time with modern, scalable, and secure infrastructure.</p>
-           </div>
-           <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
-             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0B57D0] flex items-center justify-center mb-6 shadow-inner">
-               <Rocket className="w-7 h-7" />
-             </div>
-             <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Execution</h3>
-             <p className="text-base text-gray-600">Rapid iterations and seamless delivery without compromising on quality.</p>
-           </div>
-           <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
-             <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0B57D0] flex items-center justify-center mb-6 shadow-inner">
-               <Zap className="w-7 h-7" />
-             </div>
-             <h3 className="text-xl font-bold text-gray-900 mb-3">Direct Founder Access</h3>
-             <p className="text-base text-gray-600">Work directly with senior engineers. No project managers or delays, just high quality code.</p>
-           </div>
-        </motion.div>
+        <div className="mx-auto max-w-7xl text-center">
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-bold text-[#0B57D0]">
+            <Sparkles className="h-4 w-4" /> About Monk Studio
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto max-w-5xl text-5xl font-black leading-[1.05] tracking-[-0.04em] text-gray-950 md:text-7xl lg:text-8xl">
+            We turn ambitious ideas into{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-[#0B57D0] bg-clip-text text-transparent">useful digital products.</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.16 }} className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-gray-600 md:text-xl">
+            Monk Studio is a digital product studio helping businesses move from early ideas to polished, scalable experiences. We bring strategy, design, and engineering together in one focused partnership.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.24 }} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/contact" className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gray-950 px-7 text-base font-bold text-white shadow-xl shadow-gray-900/10 transition-transform hover:-translate-y-0.5">
+              Start a project <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link href="/#portfolio" className="inline-flex h-14 items-center justify-center rounded-full border border-gray-200 bg-white px-7 text-base font-bold text-gray-800 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-[#0B57D0]">
+              Explore our work
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100 relative">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">Meet the Team</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              The technical duo turning ambitious ideas into scalable, production-ready digital products.
-            </p>
+      <section className="border-y border-gray-100 bg-gray-50 px-4 py-20 md:px-6 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-24">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }}>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#0B57D0]">What we believe</p>
+            <h2 className="text-4xl font-black leading-tight tracking-[-0.03em] text-gray-950 md:text-6xl">Good products feel simple because the thinking behind them is not.</h2>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: 0.1 }} className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-12">
+            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#0B57D0]"><Blocks className="h-7 w-7" /></div>
+            <p className="text-lg leading-relaxed text-gray-600 md:text-xl">Our work starts with understanding the real challenge—not jumping straight to a feature list. From there, we make thoughtful choices, reduce unnecessary complexity, and build around the people who will actually use the product.</p>
+            <p className="mt-6 text-lg leading-relaxed text-gray-600 md:text-xl">The result is a digital experience that looks considered, works reliably, and supports the next stage of your business.</p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 md:px-6 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#0B57D0]">How we work</p>
+            <h2 className="text-4xl font-black tracking-[-0.03em] text-gray-950 md:text-6xl">A partner for the whole journey.</h2>
+            <p className="mt-5 text-lg leading-relaxed text-gray-600">We keep the process transparent, practical, and centered on making meaningful progress.</p>
           </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <motion.article key={value.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: index * 0.08 }} className="rounded-[2rem] border border-gray-100 bg-white p-8 shadow-[0_12px_50px_rgba(15,23,42,0.06)] md:p-10">
+                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#0B57D0]"><Icon className="h-7 w-7" /></div>
+                  <h3 className="text-2xl font-black tracking-tight text-gray-950">{value.title}</h3>
+                  <p className="mt-4 leading-relaxed text-gray-600">{value.description}</p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div 
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full"
-              >
-                <div className="relative mb-8 inline-block self-start">
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md relative z-10 bg-gradient-to-br from-blue-600 to-[#0B57D0] flex items-center justify-center text-white font-bold text-2xl">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback cleanly if network image fails
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                    <span className="absolute -z-10">{member.initials}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-[#0B57D0] rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 transform scale-150 -z-10"></div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-[#0B57D0] font-semibold text-sm tracking-wide uppercase mb-4">{member.role}</p>
-                <p className="text-gray-600 mb-8 leading-relaxed flex-grow">
-                  {member.description}
-                </p>
-
-                <div className="flex items-center gap-3 mt-auto">
-                  {member.linkedin && (
-                    <Link 
-                      href={member.linkedin}
-                      target="_blank"
-                      className="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-[#0B57D0] hover:text-white transition-colors duration-300 shadow-sm"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </Link>
-                  )}
-                  {member.github && (
-                    <Link 
-                      href={member.github}
-                      target="_blank"
-                      className="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors duration-300 shadow-sm"
-                    >
-                      <Github className="w-4 h-4" />
-                    </Link>
-                  )}
-                </div>
-              </motion.div>
+      <section className="bg-gray-950 px-4 py-24 text-white md:px-6 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-blue-400">What we do</p>
+            <h2 className="text-4xl font-black leading-tight tracking-[-0.03em] md:text-6xl">One studio, from first sketch to final release.</h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-400">Whether you are validating a new idea or improving an established product, we bring the skills needed to make it clear, usable, and ready for real-world growth.</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {capabilities.map((capability) => (
+              <div key={capability} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500/15 text-blue-400"><Check className="h-4 w-4" /></span>
+                <span className="font-semibold leading-relaxed text-gray-200">{capability}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-4 md:px-6 bg-white">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-gray-900 to-black rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0B57D0] rounded-full blur-[120px] opacity-20"></div>
-          
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Ready to build something great?</h2>
-          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto relative z-10">
-            Let&apos;s discuss how our technical expertise can help bring your vision to life faster and better than you imagined.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300 relative z-10 shadow-xl"
-          >
-            Start a Conversation <ArrowRight className="w-5 h-5" />
-          </Link>
+      <section className="px-4 py-24 md:px-6 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 max-w-3xl md:mb-20">
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#0B57D0]">Our process</p>
+            <h2 className="text-4xl font-black tracking-[-0.03em] text-gray-950 md:text-6xl">Clear steps. Shared momentum.</h2>
+          </div>
+          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-gray-200 bg-gray-200 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <article key={step.number} className="bg-white p-7 md:p-9">
+                  <div className="mb-12 flex items-center justify-between"><span className="text-sm font-black tracking-[0.2em] text-gray-300">{step.number}</span><Icon className="h-6 w-6 text-[#0B57D0]" /></div>
+                  <h3 className="text-2xl font-black tracking-tight text-gray-950">{step.title}</h3>
+                  <p className="mt-4 leading-relaxed text-gray-600">{step.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-24 md:px-6 md:pb-32">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0B57D0] to-blue-700 px-6 py-16 text-center text-white shadow-2xl shadow-blue-900/20 md:px-16 md:py-24">
+          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-white/10" />
+          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+          <div className="relative z-10">
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-blue-100">Let&apos;s build what&apos;s next</p>
+            <h2 className="mx-auto max-w-3xl text-4xl font-black tracking-[-0.03em] md:text-6xl">Have an idea worth moving forward?</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-blue-100">Tell us what you are working on. We will help you find the clearest path from idea to launch.</p>
+            <Link href="/contact" className="group mt-9 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-7 font-bold text-gray-950 shadow-xl transition-transform hover:-translate-y-0.5">
+              Start a conversation <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </section>
 
