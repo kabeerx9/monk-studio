@@ -18,10 +18,10 @@ const services = [
 ];
 
 const featured = [
-  { title: "Akima Films", category: "Creative portfolio", image: "/images/Akima.png", href: "http://akimafilms.com", color: "#dce4da", description: "A cinematic home for a creative vision.", className: "film" },
-  { title: "Real Estate Platform", category: "Web application", image: "/images/Real-estate.png", href: "https://media-monks-real-state.vercel.app/", color: "#e3e8ee", description: "Making the search for a home feel effortless.", className: "property" },
-  { title: "Book Asia", category: "Travel experience", image: "/images/Bookasia.png", href: undefined, color: "#dce9eb", description: "A digital introduction to destinations and travel services.", className: "property" },
-  { title: "Xpressells", category: "Digital storefront", image: "/images/Xpressells.png", href: undefined, color: "#f0e2d5", description: "A bold storefront for a creative asset collection.", className: "film" },
+  { title: "Akima Films", category: "Creative portfolio", image: "/images/Akima.png", href: "https://akimafilms.com", color: "#dce4da", description: "A cinematic home for a creative vision.", className: "film" },
+  { title: "Plateio", category: "Restaurant platform", image: "/images/portfolio-plateio.jpg", href: "https://plateio.in", color: "#f0e2d5", description: "A digital experience for restaurant operations and guest engagement.", className: "property" },
+  { title: "Goreeva", category: "Education platform", image: "/images/portfolio-goreeva.jpg", href: "https://goreeva.com", color: "#dce9eb", description: "A connected platform for schools and learning communities.", className: "property" },
+  { title: "CodeAudit", category: "Developer platform", image: "/images/portfolio-codeaudit.png", href: "https://codeaudit.dev", color: "#e3e8ee", description: "A focused experience for automated code review and auditing.", className: "film" },
 ];
 
 const questions = [
@@ -79,11 +79,10 @@ export default function StudioHomepage() {
           <div className={styles.wrap}>
             <div className={styles.sectionHeading}><div><SectionLabel>Selected work</SectionLabel><h2>Good thinking.<br /><span className={styles.muted}>Out in the world.</span></h2></div><p>A closer look at the brands,<br />platforms, and experiences we build.</p></div>
             <div className={styles.projectGrid}>{featured.map((project, i) => {
-              const Visual = project.href ? "a" : "div";
               return <article key={project.title} className={styles.project}>
-              <Visual href={project.href} target={project.href ? "_blank" : undefined} rel={project.href ? "noopener noreferrer" : undefined} className={`${styles.projectVisual} ${styles[project.className]}`} style={{ backgroundColor: project.color }} aria-label={project.href ? `Visit ${project.title}` : undefined}>
-                <div className={styles.projectNumber}>0{i + 1} / SELECTED WORK</div><div className={styles.browserFrame}><div className={styles.browserBar}><span /><span /><span /><i>{project.title}</i></div><div className={styles.projectScreenshot}><Image src={project.image} alt={`${project.title} website preview`} fill sizes="(max-width: 800px) 90vw, 44vw" className={styles.projectImage} /></div></div>{project.href && <span className={styles.projectArrow}><ArrowUpRight size={23} /></span>}
-              </Visual><div className={styles.projectMeta}><div><h3>{project.title}</h3><p>{project.description}</p></div><span>{project.category}</span></div>
+              <a href={project.href} target="_blank" rel="noopener noreferrer" className={`${styles.projectVisual} ${styles[project.className]}`} style={{ backgroundColor: project.color }} aria-label={`Visit ${project.title}`}>
+                <div className={styles.projectNumber}>0{i + 1} / SELECTED WORK</div><div className={styles.browserFrame}><div className={styles.browserBar}><span /><span /><span /><i>{new URL(project.href).hostname}</i></div><div className={styles.projectScreenshot}><Image src={project.image} alt={`${project.title} website preview`} fill sizes="(max-width: 800px) 90vw, 44vw" className={styles.projectImage} /></div></div><span className={styles.projectArrow}><ArrowUpRight size={23} /></span>
+              </a><div className={styles.projectMeta}><div><h3>{project.title}</h3><p>{project.description}</p></div><span>{project.category}</span></div>
             </article>;})}</div>
             <div className={styles.workMore}><p>From early-stage products to everyday business tools.</p><button type="button" className={styles.textLink} onClick={() => setShowProjects(!showProjects)} aria-expanded={showProjects} aria-controls="project-library">{showProjects ? "Close project library" : "Explore the project library"}{showProjects ? <Minus size={18} /> : <Plus size={18} />}</button></div>
             {showProjects && <div id="project-library" className={styles.library}><div className={styles.filters} aria-label="Filter projects">{["web", "mobile"].map(item => <button type="button" key={item} onClick={() => setFilter(item)} aria-pressed={filter === item} className={filter === item ? styles.filterActive : ""}>{item === "web" ? "Web experiences" : "Mobile applications"}</button>)}</div><div className={styles.libraryGrid}>{projects.filter(p => p.type === filter).map(p => <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer"><div><h3>{p.title}</h3><p>{p.des}</p></div><ArrowUpRight size={22} /></a>)}</div></div>}
